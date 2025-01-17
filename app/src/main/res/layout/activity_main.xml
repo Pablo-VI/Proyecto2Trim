@@ -47,14 +47,27 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="100dp"
-            android:background="@drawable/black_stroke"
             android:fontFamily="@font/irish_grover"
             android:text="@string/seleccionaIdioma"
             android:textColor="@color/white"
-            android:textSize="36dp"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RadioGroup
+            android:layout_width="468dp"
+            android:layout_height="89dp"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="63dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="323dp"
+            tools:layout_editor_absoluteY="172dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
