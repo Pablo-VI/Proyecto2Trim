@@ -84,7 +84,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/pers_rb"
                 android:button="@android:color/transparent"
-                android:text="RadioButton"
+                android:text="Pruebaharcodeada"
                 android:textAlignment="center"
                 android:textColor="@drawable/text_rb"
                 android:textStyle="bold" />
