@@ -9,6 +9,8 @@
     tools:context=".MainActivity"
     android:background="@drawable/fondo">
 
+    <!--PITOTE-->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_banner"
         android:layout_width="match_parent"
@@ -78,16 +80,6 @@
                 android:textColor="@drawable/text_rb"
                 android:textStyle="bold"/>
 
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="250dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/pers_rb"
-                android:button="@android:color/transparent"
-                android:text="RadioButton"
-                android:textAlignment="center"
-                android:textColor="@drawable/text_rb"
-                android:textStyle="bold" />
         </RadioGroup>
 
         <Button
