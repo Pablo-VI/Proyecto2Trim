@@ -8,8 +8,6 @@
     android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
-    <!--PITOTE-->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_banner"
         android:layout_width="match_parent"
