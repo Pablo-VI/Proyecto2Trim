@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo1"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/languageSelector"
             android:layout_width="359dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
@@ -58,7 +58,7 @@
             app:layout_constraintVertical_bias="0.077" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/button_Spanish"
             android:layout_width="166dp"
             android:layout_height="121dp"
             android:layout_marginStart="191dp"
@@ -67,14 +67,14 @@
             android:layout_marginBottom="46dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+            app:layout_constraintEnd_toStartOf="@+id/button_English"
 
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/languageSelector"
             app:srcCompat="@drawable/spain" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/button_English"
             android:layout_width="166dp"
             android:layout_height="121dp"
             android:layout_marginStart="4dp"
@@ -84,8 +84,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton3"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/button_Spanish"
+            app:layout_constraintTop_toBottomOf="@+id/languageSelector"
             app:srcCompat="@drawable/inglaterra" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

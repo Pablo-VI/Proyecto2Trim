@@ -16,6 +16,9 @@
             android:name=".tirar_dado"
             android:exported="false" />
         <activity
+            android:name=".selection"
+            android:exported="false" />
+      <activity
             android:name=".menu"
             android:exported="false" />
         <activity
