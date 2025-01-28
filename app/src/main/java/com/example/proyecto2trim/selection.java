@@ -1,7 +1,14 @@
 package com.example.proyecto2trim;
 
+import static androidx.databinding.DataBindingUtil.setContentView;
+
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +17,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.proyecto2trim.databinding.ActivitySelectionBinding;
+
+import java.util.Random;
 
 public class selection extends AppCompatActivity {
 
@@ -23,3 +32,4 @@ public class selection extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 }
+

@@ -76,7 +76,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="57dp" />
-
+          
             <TextView
                 android:id="@+id/eligecolor"
                 android:layout_width="wrap_content"
@@ -97,25 +97,30 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="378dp"
-            android:layout_height="310dp"
-            android:layout_marginEnd="45dp"
-            android:layout_marginBottom="31dp"
+            android:id="@+id/layout_tablero"
+            android:layout_width="355dp"
+            android:layout_height="342dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_banner">
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/layout_dado"
+            app:layout_constraintTop_toBottomOf="@+id/layout_banner"
+            app:layout_constraintVertical_bias="0.0">
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="265dp"
-                android:layout_height="265dp"
+                android:id="@+id/table"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.202"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.384"
+                app:layout_constraintVertical_bias="0.08"
                 app:srcCompat="@drawable/tablero" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
