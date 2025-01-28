@@ -4,38 +4,27 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import com.example.proyecto2trim.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-//Eduardo marica
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        // Forzar orientación horizontal
+        setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        // Inicializamos el ImageButton
+        ImageButton cambiarActivityBtn = findViewById(R.id.button_Spanish);
 
-
-        //Iniciar la app en Español
-        binding.buttonSpanish.setOnClickListener(new View.OnClickListener() {
+        // Configuramos el listener del ImageButton
+        cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(this, menu.class); //Creamos el intent
-                startActivity(intent);  //Lanzamos el intent
+            public void onClick(View v) {
+                // Cambiar a la segunda Activity
+                Intent intent = new Intent(MainActivity.this, menu.class);
+                startActivity(intent);
             }
         });
-
-
-
     }
 }
