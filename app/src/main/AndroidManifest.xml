@@ -12,21 +12,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto2ºTrim"
         tools:targetApi="31">
+
+        <!-- Actividad para tirar dado -->
         <activity
             android:name=".tirar_dado"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+
+        <!-- Actividad de selección siempre en horizontal -->
         <activity
             android:name=".selection"
-            android:exported="false" />
-      <activity
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+
+        <!-- Menú principal -->
+        <activity
             android:name=".menu"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+
+        <!-- Actividad principal lanzadora -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
