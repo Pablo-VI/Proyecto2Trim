@@ -3,6 +3,7 @@ package com.example.proyecto2trim;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.proyecto2trim.databinding.ActivityMainBinding;
+import com.example.proyecto2trim.databinding.ActivityMenuBinding;
 
 public class MainActivity extends AppCompatActivity {
 //Eduardo marica
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(this, menu.class); //Creamos el intent
+                Intent intent = new Intent(this, activity_menu.class); //Creamos el intent
                 startActivity(intent);  //Lanzamos el intent
             }
         });
