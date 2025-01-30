@@ -20,7 +20,7 @@
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
 
-        <!-- Actividad de selección siempre en horizontal -->
+        <!-- Actividad de selección color -->
         <activity
             android:name=".selection"
             android:exported="false"
