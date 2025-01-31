@@ -3,15 +3,19 @@ package com.example.proyecto2trim;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.proyecto2trim.databinding.ActivityPreguntaBinding;
 import com.example.proyecto2trim.databinding.ActivitySelectionBinding;
 
-public class selection extends AppCompatActivity {
+public class pregunta extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
+        ActivityPreguntaBinding binding = ActivityPreguntaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Forzar orientación horizontal
@@ -28,6 +32,14 @@ public class selection extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+        TextView miCajaTexto = findViewById(R.id.miCajaTexto);
+
+        // Cambiar el texto
+        miCajaTexto.setText("Nuevo texto");
+
+        // Obtener el texto actual
+        String textoActual = miCajaTexto.getText().toString();
     }
 
     @Override
