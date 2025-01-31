@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/fondo_caja_texto.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo gris -->
+    <solid android:color="#CCCCCC" /> <!-- Color de fondo gris -->
+
+    <!-- Borde negro -->
+    <stroke android:width="2dp" android:color="#000000" /> <!-- Borde negro de 2dp -->
+
+    <!-- Esquinas redondeadas (opcional) -->
+    <corners android:radius="8dp" /> <!-- Esquinas redondeadas de 8dp -->
+</shape>
