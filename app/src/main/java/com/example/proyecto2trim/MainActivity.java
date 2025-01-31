@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
-                Intent intent = new Intent(MainActivity.this, menu.class);
+                Intent intent = new Intent(MainActivity.this, game.class);
                 startActivity(intent);
             }
         });
