@@ -2,41 +2,41 @@ package com.example.proyecto2trim;
 
 public class Table
 {
-    private String fila;
-    private int posicion;
-    private String tipoCasilla;
+    private String row;
+    private int position;
+    private String typeBox;
 
 
-    public Table(String fila, int posicion, String tipoCasilla) {
-        this.fila = fila;
-        this.posicion = posicion;
-        this.tipoCasilla = tipoCasilla;
+    public Table(String row, int position, String typeBox) {
+        this.row = row;
+        this.position = position;
+        this.typeBox = typeBox;
     }
 
-    public String getFila() {
-        return fila;
+    public String getRow() {
+        return row;
     }
 
-    public int getPosicion() {
-        return posicion;
+    public int getPosition() {
+        return position;
     }
 
-    public String getTipoCasilla()
+    public String getTypeBox()
     {
-        return tipoCasilla;
+        return typeBox;
     }
 
-    public void setFila(String fila) {
-        this.fila = fila;
+    public void setRow(String row) {
+        this.row = row;
     }
 
-    public void setPosicion(int posicion) {
-        this.posicion = posicion;
+    public void setPosition(int position) {
+        this.position = position;
     }
 
-    public void setTipoCasilla(String tipoCasilla)
+    public void setTypeBox(String typeBox)
     {
-        this.tipoCasilla = tipoCasilla;
+        this.typeBox = typeBox;
     }
 
     public static void main(String[] args)
@@ -49,6 +49,8 @@ public class Table
         Table [] fila5 = new Table[6]; //6 casillas
         Table [] fila6 = new Table[6]; //6 casillas
         Table [] main = new Table[42]; //42 casillas
+
+        Table inicio = new Table("Inicio", 0, "Inicio");
 
         fila1[0] = new Table("1", 1, "Entretenimiento");
         fila1[1] = new Table("1", 2, "Arte y Literatura");

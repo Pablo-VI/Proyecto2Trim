@@ -1,23 +1,22 @@
 package com.example.proyecto2trim;
 
-public class Player extends Table
-{
-    private String nombre;
+public class Player {
+    private String name;
     private String color;
+    private Table position; // La casilla donde está el jugador
 
-    public Player(String fila, int posicion, String tipoCasilla, String nombre, String color)
-    {
-        super(fila, posicion, tipoCasilla);
-        this.nombre = nombre;
+    public Player(String name, String color, Table position) {
+        this.name = name;
         this.color = color;
+        this.position = this.position; // Se asigna una casilla existente
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getColor() {
@@ -26,5 +25,17 @@ public class Player extends Table
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public Table getPosition() {
+        return position;
+    }
+
+    public void setPosition(Table position) {
+        this.position = position;
+    }
+
+    public void moveTo(Table newPosition) {
+        this.position = newPosition;
     }
 }

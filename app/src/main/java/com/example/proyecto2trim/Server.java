@@ -1,83 +1,95 @@
 package com.example.proyecto2trim;
 
-import java.io.DataInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Server implements Runnable {
+public class Server implements Runnable
+{
+    private final ArrayList<Socket> clients; // Lista para almacenar los sockets de los clients conectados
+    private final int port; // Puerto en el que el servidor escuchará las conexiones
 
-    // Lista para almacenar los sockets de los clientes conectados
-    private final ArrayList<Socket> clientes;
-
-    // Puerto en el que el servidor escuchará las conexiones
-    private int puerto;
-
-    // Constructor del servidor
-    public Server(int puerto) {
-        this.puerto = puerto; // Asigna el puerto
-        this.clientes = new ArrayList(); // Inicializa la lista de clientes
+    /**
+     * Constructor para inicializar el servidor.
+     *
+     * @param port El port en el que el servidor escuchará las conexiones.
+     */
+    public Server(int port)
+    {
+        this.port = port; // Asignar el port
+        this.clients = new ArrayList<>(); // Inicializar la lista de clients
     }
 
-    // Método run() que se ejecuta cuando el servidor inicia
     @Override
-    public void run() {
+    public void run()
+    {
+        try (// Crear un ServerSocket para escuchar conexiones en el port especificado
+                ServerSocket servidor = new ServerSocket(port))
+        {
+            System.out.println("Servidor iniciado en el port " + port);
 
-        ServerSocket servidor = null; // Socket del servidor
-        Socket sc = null; // Socket para manejar la conexión con un cliente
-        DataInputStream in; // Flujo de entrada para recibir datos del cliente
+            // Bucle infinito para aceptar conexiones de clients
+            while (true)
+            {
+                // Esperar a que un cliente se conecte
+                Socket cliente = servidor.accept();
 
-        try {
-            // Creamos el socket del servidor en el puerto especificado
-            servidor = new ServerSocket(puerto);
-            System.out.println("Servidor iniciado");
-
-            // Bucle infinito para escuchar constantemente nuevas conexiones
-            while (true) {
-
-                // Espera a que un cliente se conecte
-                sc = servidor.accept();
-
-                // Muestra la dirección IP del cliente que se ha conectado
-                System.out.println("Cliente conectado desde " + sc.getInetAddress());
-
-                // Bloque sincronizado para evitar problemas de concurrencia al agregar clientes
-                synchronized (clientes) {
-                    clientes.add(sc); // Agrega el socket del cliente a la lista
+                // Agregar el socket del cliente a la lista (de manera sincronizada)
+                synchronized (clients)
+                {
+                    clients.add(cliente);
                 }
-            }
 
+                // Mostrar la dirección IP del cliente que se ha conectado
+                System.out.println("Nuevo cliente conectado: " + cliente.getInetAddress());
+
+                // Iniciar un hilo para manejar la comunicación con el cliente
+                new Thread(() -> manejarCliente(cliente)).start();
+            }
         } catch (IOException ex) {
-            // Manejo de excepciones: registra errores en el log
-            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+            // Manejar errores de entrada/salida
+            ex.printStackTrace(); // Imprimir la traza de la excepción
         }
-
     }
 
-    // Método para enviar información a todos los clientes conectados
-    public void enviarInfo(Gasolinera g) {
+    /**
+     * Método para manejar la comunicación con un cliente específico.
+     *
+     * @param cliente El socket del cliente que se está manejando.
+     */
+    private void manejarCliente(Socket cliente)
+    {
+        try (// Crear un flujo de salida para enviar objetos al cliente
+                ObjectOutputStream oos = new ObjectOutputStream(cliente.getOutputStream());
+                // Crear un flujo de entrada para recibir objetos del cliente
+                ObjectInputStream ois = new ObjectInputStream(cliente.getInputStream()))
+        {
+            // Bucle infinito para recibir y enviar actualizaciones
+            while (true)
+            {
+                // Recibir la posición actualizada del jugador
+                Player jugador = (Player) ois.readObject();
 
-        // Bloque sincronizado para evitar problemas de concurrencia al acceder a la lista de clientes
-        synchronized (clientes) {
-            // Recorre todos los sockets de los clientes conectados
-            for (Socket sock : clientes) {
-
-                try {
-                    // Crea un flujo de salida para enviar objetos al cliente
-                    ObjectOutputStream oos = new ObjectOutputStream(sock.getOutputStream());
-                    oos.writeObject(g); // Envía el objeto Gasolinera al cliente
-                    oos.flush(); // Limpia el flujo para asegurar que los datos se envíen
-                } catch (IOException ex) {
-                    // Manejo de excepciones: registra errores en el log
-                    Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+                // Enviar la actualización a todos los clients (excepto al que envió la actualización)
+                synchronized (clients) {
+                    for (Socket c : clients)
+                    {
+                        if (!c.equals(cliente))
+                        { // No enviar la actualización al mismo cliente
+                            // Crear un flujo de salida para el cliente actual
+                            ObjectOutputStream out = new ObjectOutputStream(c.getOutputStream());
+                            out.writeObject(jugador); // Enviar el objeto Player
+                            out.flush(); // Asegurar que los datos se envíen
+                        }
+                    }
                 }
             }
+        } catch (IOException | ClassNotFoundException ex) {
+            // Manejar errores de entrada/salida o de lectura de objetos
+            ex.printStackTrace(); // Imprimir la traza de la excepción
         }
-
     }
-
 }
