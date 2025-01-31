@@ -30,7 +30,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_personalizar"
+            android:id="@+id/layout_nombre"
             android:layout_width="300dp"
             android:layout_height="315dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,9 +44,9 @@
 
             <EditText
                 android:id="@+id/escribetunombre"
-                android:layout_width="212dp"
-                android:layout_height="46dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/campotextoblanco"
                 android:hint="@string/camponombre"
                 android:inputType="textPersonName"
@@ -69,133 +69,18 @@
                 android:text="@string/eligetunombre"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.521"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.096" />
-
-            <TextView
-                android:id="@+id/eligecolor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/irish_grover"
-                android:shadowColor="#000000"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.6"
-                android:text="@string/eligetucolor"
-                android:textAllCaps="true"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/escribetunombre"
-                app:layout_constraintVertical_bias="0.006" />
-
-            <ImageButton
-                android:id="@+id/boton_marron"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="7dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_marron"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligecolor"
-                app:layout_constraintVertical_bias="0.068" />
-
-            <ImageButton
-                android:id="@+id/boton_morado"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="95dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_morado"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligecolor"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <ImageButton
-                android:id="@+id/boton_azul"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="75dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_azul"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.311"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligecolor"
-                app:layout_constraintVertical_bias="0.551" />
-
-            <ImageButton
-                android:id="@+id/boton_naranja"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="75dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_naranja"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.692"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligecolor"
-                app:layout_constraintVertical_bias="0.551" />
-
-            <ImageButton
-                android:id="@+id/boton_verde"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="43dp"
-                android:layout_marginTop="27dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_verde"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.631"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligecolor"
-                app:layout_constraintVertical_bias="0.092" />
-
-            <ImageButton
-                android:id="@+id/boton_amarillo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="27dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_amarillo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.311"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligecolor"
-                app:layout_constraintVertical_bias="0.092" />
+                app:layout_constraintVertical_bias="0.288" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-
-            android:id="@+id/layout_tablero"
+            android:id="@+id/layout_color"
             android:layout_width="378dp"
             android:layout_height="310dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -204,21 +89,232 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/tablero"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="30dp"
+            <TextView
+                android:id="@+id/eligecolor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/irish_grover"
+                android:shadowColor="#000000"
+                android:shadowDx="1.5"
+                android:shadowDy="1.3"
+                android:shadowRadius="1.6"
+                android:text="@string/eligetucolor"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/tablero" />
+                app:layout_constraintVertical_bias="0.283" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Botón Marrón -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintVertical_bias="0.1">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Botón Amarillo -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_bias="0.3"
+                    app:layout_constraintVertical_bias="0.3">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Botón Azul -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintVertical_bias="0.5">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Botón Morado -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_bias="0.7"
+                    app:layout_constraintVertical_bias="0.7">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Botón Naranja -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintVertical_bias="0.9">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Botón Verde -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintVertical_bias="0.8">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_verde"
+                app:layout_constraintBottom_toBottomOf="@+id/boton_verde"
+                app:layout_constraintEnd_toEndOf="@+id/boton_verde"
+                app:layout_constraintStart_toStartOf="@+id/boton_verde"
+                app:layout_constraintTop_toTopOf="@+id/boton_verde" />
+
+            <RadioButton
+                android:id="@+id/boton_verde"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.683"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.632" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_marron"
+                app:layout_constraintBottom_toBottomOf="@+id/boton_marron"
+                app:layout_constraintEnd_toEndOf="@+id/boton_marron"
+                app:layout_constraintStart_toStartOf="@+id/boton_marron"
+                app:layout_constraintTop_toTopOf="@+id/boton_marron" />
+
+            <RadioButton
+                android:id="@+id/boton_marron"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_amarillo"
+                app:layout_constraintBottom_toBottomOf="@+id/boton_amarillo"
+                app:layout_constraintEnd_toEndOf="@+id/boton_amarillo"
+                app:layout_constraintStart_toStartOf="@+id/boton_amarillo"
+                app:layout_constraintTop_toTopOf="@+id/boton_amarillo" />
+
+            <RadioButton
+                android:id="@+id/boton_amarillo"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.316"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_azul"
+                app:layout_constraintBottom_toBottomOf="@+id/boton_azul"
+                app:layout_constraintEnd_toEndOf="@+id/boton_azul"
+                app:layout_constraintStart_toStartOf="@+id/boton_azul"
+                app:layout_constraintTop_toTopOf="@+id/boton_azul" />
+
+            <RadioButton
+                android:id="@+id/boton_azul"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.316"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.865" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_morado"
+                app:layout_constraintBottom_toBottomOf="@+id/boton_morado"
+                app:layout_constraintEnd_toEndOf="@+id/boton_morado"
+                app:layout_constraintStart_toStartOf="@+id/boton_morado"
+                app:layout_constraintTop_toTopOf="@+id/boton_morado" />
+
+            <RadioButton
+                android:id="@+id/boton_morado"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.995" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/color_naranja"
+                app:layout_constraintBottom_toBottomOf="@+id/boton_naranja"
+                app:layout_constraintEnd_toEndOf="@+id/boton_naranja"
+                app:layout_constraintStart_toStartOf="@+id/boton_naranja"
+                app:layout_constraintTop_toTopOf="@+id/boton_naranja" />
+
+            <RadioButton
+                android:id="@+id/boton_naranja"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:button="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.683"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.865" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
