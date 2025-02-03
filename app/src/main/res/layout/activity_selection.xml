@@ -187,16 +187,16 @@
 
             <RadioButton
                 android:id="@+id/boton_verde"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:button="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.683"
+                app:layout_constraintHorizontal_bias="0.652"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.632" />
+                app:layout_constraintVertical_bias="0.63" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -211,14 +211,15 @@
 
             <RadioButton
                 android:id="@+id/boton_marron"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:button="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.553" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -233,16 +234,16 @@
 
             <RadioButton
                 android:id="@+id/boton_amarillo"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:button="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.316"
+                app:layout_constraintHorizontal_bias="0.347"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6" />
+                app:layout_constraintVertical_bias="0.63" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -257,13 +258,13 @@
 
             <RadioButton
                 android:id="@+id/boton_azul"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:button="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.316"
+                app:layout_constraintHorizontal_bias="0.347"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.865" />
@@ -281,16 +282,15 @@
 
             <RadioButton
                 android:id="@+id/boton_morado"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:button="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.995" />
+                app:layout_constraintVertical_bias="0.938" />
 
             <ImageView
                 android:layout_width="50dp"
@@ -304,13 +304,13 @@
 
             <RadioButton
                 android:id="@+id/boton_naranja"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@android:color/transparent"
                 android:button="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.683"
+                app:layout_constraintHorizontal_bias="0.652"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.865" />
