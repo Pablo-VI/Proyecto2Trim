@@ -11,6 +11,8 @@
     <string name="camponombre">Escribe tu name</string>
     <string name="eligetucolor">ELIGE TU COLOR:</string>
     <string name="eligeFila">ELIGE TU FILA</string>
+    <string name="nombre">NOMBRE:</string>
+    <string name="turnopregunta">LE TOCA PENSAR A:</string>
 </resources>
 
 
