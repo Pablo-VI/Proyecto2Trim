@@ -12,29 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto2ºTrim"
         tools:targetApi="31">
+        <activity
+            android:name=".game"
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->
 
-        <!-- Actividad para tirar dado -->
         <activity
             android:name=".tirar_dado"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->
 
-        <!-- Actividad de selección color -->
         <activity
             android:name=".selection"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-
-        <!-- Menú principal -->
+            tools:ignore="LockedOrientationActivity" /> <!-- Menú principal -->
         <activity
             android:name=".menu"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-
-        <!-- Actividad principal lanzadora -->
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad principal lanzadora -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -50,9 +48,7 @@
         <activity android:name=".pregunta"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity">
-
-        </activity>
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
