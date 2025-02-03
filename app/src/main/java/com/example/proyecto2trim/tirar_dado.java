@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.proyecto2trim.databinding.ActivityTirarDadoBinding;
+
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -24,7 +26,10 @@ public class tirar_dado extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tirar_dado); // Establecer el layout de la actividad
+        //setContentView(R.layout.activity_tirar_dado); // Establecer el layout de la actividad
+        ActivityTirarDadoBinding binding = ActivityTirarDadoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
 
         // Crear todas las casillas del tablero para el jugador
         //Inicializar todas las casillas del tablero

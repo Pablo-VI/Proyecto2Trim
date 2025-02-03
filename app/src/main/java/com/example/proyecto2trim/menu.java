@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -20,16 +21,16 @@ public class menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_menu);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        //EdgeToEdge.enable(this);
+        //setContentView(R.layout.activity_menu);
+        ActivityMenuBinding binding = ActivityMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        // Referencia al botón en el layout
-        Button Activity = findViewById(R.id.button_create);
+
+        // Instanciar los elementos
+        Button Activity = binding.buttonCreate;
+        int createLobby = binding.numberCreate;
+
 
         // Configurar el listener para el clic del botón usando una expresión lambda
         Activity.setOnClickListener(view ->
