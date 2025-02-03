@@ -40,7 +40,10 @@
             android:exported="true"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!-- Actividad pregunta -->
@@ -48,10 +51,7 @@
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 
