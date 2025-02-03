@@ -22,7 +22,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" >
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="638dp"
@@ -124,34 +126,31 @@
                 app:layout_constraintStart_toEndOf="@+id/number_create"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/confirm_multiplayer"
-                android:layout_width="88dp"
+            <Button
+                android:id="@+id/play2"
+                android:layout_width="wrap_content"
                 android:layout_height="46dp"
-                android:layout_marginStart="177dp"
-                android:layout_marginTop="218dp"
-                android:backgroundTint="#000000"
+                android:layout_marginStart="173dp"
+                android:layout_marginTop="28dp"
+                android:background="#0F0F0F"
+                android:text="@string/unirse"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/number_multiplayer"
-                app:layout_constraintStart_toEndOf="@+id/confirm_create"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/color_boton" />
+                app:layout_constraintStart_toEndOf="@+id/button_create"
+                app:layout_constraintTop_toBottomOf="@+id/image_multiplayer" />
 
-            <ImageButton
-                android:id="@+id/confirm_create"
-                android:layout_width="88dp"
+            <Button
+                android:id="@+id/button_create"
+                android:layout_width="wrap_content"
                 android:layout_height="46dp"
-                android:layout_marginTop="218dp"
-                android:layout_marginEnd="1dp"
-                android:backgroundTint="#000000"
-                android:icon="@drawable/flecha_blanca"
-                android:scaleType="center"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="413dp"
+                android:background="#0F0F0F"
+                android:text="@string/crear"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/confirm_multiplayer"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/number_create"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/color_boton" />
+                app:layout_constraintTop_toBottomOf="@+id/image_create" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,28 +5,33 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-import com.example.proyecto2trim.databinding.ActivityTirarDadoBindingImpl;
-
-public class MainActivity extends AppCompatActivity {
+public class dificultad extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_dificultad);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn = findViewById(R.id.button_Spanish);
+        ImageButton cambiarActivityBtn = findViewById(R.id.check);
 
         // Configuramos el listener del ImageButton
         cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
-                Intent intent = new Intent(MainActivity.this, menu.class);
+                Intent intent = new Intent(dificultad.this, selection.class);
                 startActivity(intent);
             }
         });
+
     }
 }
