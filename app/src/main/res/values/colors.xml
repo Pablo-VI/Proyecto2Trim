@@ -5,6 +5,10 @@
     <color name="grey">#808080</color>
     <color name="mi_color">#FF5722</color> <!-- color naranja -->
     <color name="transparente">#00000000</color>
+    <color name="rojo_opcion">#E30101</color>
+    <color name="verde_opcion">#00CB25</color>
+    <color name="amarillo_opcion">#D5E400</color>
+    <color name="azul_opcion">#0048E2</color>
 </resources>
 
 

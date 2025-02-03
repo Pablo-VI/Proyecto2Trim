@@ -8,8 +8,9 @@
     <string name="dado">LANZA EL DADO</string>
     <string name="todo">TODO</string>
     <string name="eligetunombre">ELIGE TU NOMBRE:</string>
-    <string name="camponombre">Escribe tu nombre</string>
+    <string name="camponombre">Escribe tu name</string>
     <string name="eligetucolor">ELIGE TU COLOR:</string>
+    <string name="eligeFila">ELIGE TU FILA</string>
     <string name="nombre">NOMBRE:</string>
     <string name="turnopregunta">LE TOCA PENSAR A:</string>
     <string name="d_trivial">TRIVIAL</string>
