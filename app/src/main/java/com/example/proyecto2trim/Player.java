@@ -4,11 +4,13 @@ public class Player {
     private String name;
     private String color;
     private Table position; // La casilla donde está el jugador
+    private int numThrows;
 
-    public Player(String name, String color, Table position) {
+    public Player(String name, String color, Table position, int numThrows) {
         this.name = name;
         this.color = color;
         this.position = this.position; // Se asigna una casilla existente
+        this.numThrows = this.numThrows;
     }
 
     public String getName() {
@@ -25,6 +27,14 @@ public class Player {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public int getNumThrows() {
+        return numThrows;
+    }
+
+    public void setNumThrows(int numThrows) {
+        this.numThrows = numThrows;
     }
 
     public Table getPosition() {

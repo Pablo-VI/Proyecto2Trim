@@ -3,7 +3,9 @@ package com.example.proyecto2trim;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -134,31 +136,32 @@ public class tirar_dado extends AppCompatActivity {
         fila5[5] = main[28]; //Ficha Naranja
         fila6[5] = main[35]; //Ficha Rosa
 
-        // Variable para rastrear la primera tirada
-        private boolean primeraTirada = true;
+
 
         // Inicializar vistas
         imageView = findViewById(R.id.dice); // Obtener la referencia al ImageView del dado
         generarNumeroBtn = findViewById(R.id.button_tirar); // Obtener la referencia al botón de lanzar
 
         // Inicializar los botones que se mostrarán dinámicamente
-        Button botonFila1 = findViewById(R.id.boton_fila_1);
-        Button botonFila2 = findViewById(R.id.boton_fila_2);
-        Button botonFila3 = findViewById(R.id.boton_fila_3);
-        Button botonFila4 = findViewById(R.id.boton_fila_4);
-        Button botonFila5 = findViewById(R.id.boton_fila_5);
-        Button botonFila6 = findViewById(R.id.boton_fila_6);
+        ImageButton buttonRow1 = findViewById(R.id.boton_fila_1);
+        ImageButton buttonRow2 = findViewById(R.id.boton_fila_2);
+        ImageButton buttonRow3 = findViewById(R.id.boton_fila_3);
+        ImageButton buttonRow4 = findViewById(R.id.boton_fila_4);
+        ImageButton buttonRow5 = findViewById(R.id.boton_fila_5);
+        ImageButton buttonRow6 = findViewById(R.id.boton_fila_6);
+        TextView textChooseRow = findViewById(R.id.text_chooseRow);
 
         // Ocultar los botones inicialmente
-        botonFila1.setVisibility(View.GONE);
-        botonFila2.setVisibility(View.GONE);
-        botonFila3.setVisibility(View.GONE);
-        botonFila4.setVisibility(View.GONE);
-        botonFila5.setVisibility(View.GONE);
-        botonFila6.setVisibility(View.GONE);
+        buttonRow1.setVisibility(View.GONE);
+        buttonRow2.setVisibility(View.GONE);
+        buttonRow3.setVisibility(View.GONE);
+        buttonRow4.setVisibility(View.GONE);
+        buttonRow5.setVisibility(View.GONE);
+        buttonRow6.setVisibility(View.GONE);
+        textChooseRow.setVisibility(View.GONE);
 
         // Inicializar jugador con valores predeterminados
-        jugador = new Player("player1", "Azul", inicio);
+        jugador = new Player("player1", "Azul", inicio, 0);
 
         // Conectar al servidor en el puerto 12345
         cliente = new Client(12345);
@@ -173,23 +176,15 @@ public class tirar_dado extends AppCompatActivity {
             }
         });
 
-        // Mostrar los botones solo en la primera tirada
-        if (primeraTirada) {
-            botonFila1.setVisibility(View.VISIBLE);
-            botonFila2.setVisibility(View.VISIBLE);
-            // Muestra los demás botones según sea necesario...
-            primeraTirada = false; // Cambiar el estado para que no se muestren de nuevo
-        }
-
         // Configurar el listener para el botón de lanzar el dado
         generarNumeroBtn.setOnClickListener(v -> {
             // Generar un número aleatorio entre 1 y 6
             Random rand = new Random();
             int numeroAleatorio = rand.nextInt(6) + 1;
+            jugador.setNumThrows(jugador.getNumThrows()+1);
 
             // Actualizar la posición del jugador sumando el número aleatorio
-
-            jugador.moveTo(jugador.getPosition() + numeroAleatorio);
+            //jugador.moveTo(jugador.getPosition() + numeroAleatorio);
 
             // Enviar la actualización al servidor en un hilo separado
             new Thread(() -> {
@@ -204,6 +199,17 @@ public class tirar_dado extends AppCompatActivity {
 
             // Cambiar la imagen del dado según el número generado
             cambiarImagenDado(numeroAleatorio);
+
+            // Mostrar los botones solo en la primera tirada
+            if (jugador.getNumThrows() == 1) {
+                buttonRow1.setVisibility(View.VISIBLE);
+                buttonRow2.setVisibility(View.VISIBLE);
+                buttonRow3.setVisibility(View.VISIBLE);
+                buttonRow4.setVisibility(View.VISIBLE);
+                buttonRow5.setVisibility(View.VISIBLE);
+                buttonRow6.setVisibility(View.VISIBLE);
+                textChooseRow.setVisibility(View.VISIBLE);
+            }
         });
     }
 
