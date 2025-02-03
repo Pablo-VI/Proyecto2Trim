@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.proyecto2trim.databinding.ActivitySelectionBinding;
+import com.example.proyecto2trim.databinding.ActivityTirarDadoBinding;
+
 import java.util.Random;
 
 public class tirar_dado extends AppCompatActivity {
@@ -14,14 +16,15 @@ public class tirar_dado extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
+        ActivityTirarDadoBinding binding = ActivityTirarDadoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+// Forzar orientación horizontal
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         ImageView imageView;
         Button generarNumeroBtn;
 
-        // Forzar orientación horizontal
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
 
         // Inicializar vistas
         imageView = findViewById(R.id.dice);

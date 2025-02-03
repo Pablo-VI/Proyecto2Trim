@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#808080</color>
     <color name="mi_color">#FF5722</color> <!-- color naranja -->
+    <color name="transparente">#00000000</color>
 </resources>
 
 

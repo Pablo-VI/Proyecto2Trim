@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado cuando el RadioButton está pulsado pero no seleccionado -->
+    <item android:state_pressed="true" android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#888888"/> <!-- Color oscuro cuando está pulsado -->
+        </shape>
+    </item>
+
+    <!-- Estado cuando el RadioButton está seleccionado -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#5D5D5D"/>
+            <solid android:textColor="#FFFFFF"/><!-- Color oscuro cuando está seleccionado -->
+            <!-- Bordes -->
+            <stroke
+                android:width="2dp"/> <!-- Grosor del borde -->
+        </shape>
+    </item>
+
+    <!-- Estado por defecto (no pulsado ni seleccionado) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+            <solid android:textColor="#000000"/>
+            <!-- Color claro por defecto -->
+            <!-- Bordes -->
+            <stroke
+                android:width="2dp"/> <!-- Grosor del borde -->
+
+        </shape>
+    </item>
+</selector>

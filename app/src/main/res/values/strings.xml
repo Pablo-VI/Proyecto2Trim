@@ -12,6 +12,13 @@
     <string name="eligetucolor">ELIGE TU COLOR:</string>
     <string name="nombre">NOMBRE:</string>
     <string name="turnopregunta">LE TOCA PENSAR A:</string>
+    <string name="d_trivial">TRIVIAL</string>
+    <string name="d_clock">CONTRARRELOJ</string>
+    <string name="d_relajado">RELAJADO</string>
+    <string name="d_desafiante">DESAFIANTE</string>
+    <string name="d_maestro">MAESTRO</string>
+    <string name="modo">MODO DE JUEGO</string>
+    <string name="dificultad">DIFICULTAD</string>
 </resources>
 
 
