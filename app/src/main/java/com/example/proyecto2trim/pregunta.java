@@ -33,14 +33,7 @@ public class pregunta extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        TextView miCajaTexto = findViewById(R.id.miCajaTexto);
-
-        // Cambiar el texto
-        miCajaTexto.setText("Nuevo texto");
-
-        // Obtener el texto actual
-        String textoActual = miCajaTexto.getText().toString();
-    }
+        }
 
     @Override
     protected void onResume() {
