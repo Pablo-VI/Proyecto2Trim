@@ -32,35 +32,25 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_nombre"
             android:layout_width="300dp"
-            android:layout_height="315dp"
+            android:layout_height="317dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintHorizontal_bias="0.162"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <!-- Otros elementos -->
 
-
-            <EditText
-                android:id="@+id/escribetunombre"
-                android:layout_width="230dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/campotextoblanco"
-                android:hint="@string/camponombre"
-                android:inputType="textPersonName"
-                android:padding="12dp"
-                android:textColor="#000000"
-                android:textColorHint="#808080"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eligenombre" />
 
             <TextView
                 android:id="@+id/eligenombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="41dp"
+                android:layout_marginBottom="200dp"
                 android:fontFamily="@font/irish_grover"
                 android:shadowColor="#000000"
                 android:shadowDx="1.5"
@@ -69,30 +59,55 @@
                 android:text="@string/eligetunombre"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
-                android:textSize="32sp"
+                android:textSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.521"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.288" />
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/escribetunombre"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="54dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="96dp"
+                android:background="@drawable/campotextoblanco"
+                android:hint="@string/camponombre"
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eligenombre" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_color"
-            android:layout_width="378dp"
-            android:layout_height="310dp"
+            android:layout_width="382dp"
+            android:layout_height="317dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.902"
+            app:layout_constraintHorizontal_bias="0.994"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
 
             <TextView
                 android:id="@+id/eligecolor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="43dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="43dp"
+                android:layout_marginBottom="200dp"
                 android:fontFamily="@font/irish_grover"
                 android:shadowColor="#000000"
                 android:shadowDx="1.5"
@@ -101,221 +116,120 @@
                 android:text="@string/eligetucolor"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
-                android:textSize="32dp"
+                android:textSize="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.283" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="41dp"
+                android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <!-- Botón Marrón -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHorizontal_bias="0.1"
-                    app:layout_constraintVertical_bias="0.1">
+                <RadioButton
+                    android:id="@+id/marron"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_button_marron"
+                    android:button="@null"
+                    android:buttonTint="#000000"
+                    android:fontFamily="@font/irish_grover"
+                    android:foregroundTint="#000000"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+                <RadioButton
+                    android:id="@+id/amarillo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_button_amarillo"
+                    android:button="@null"
+                    android:buttonTint="#000000"
+                    android:fontFamily="@font/irish_grover"
+                    android:foregroundTint="#000000"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+                <RadioButton
+                    android:id="@+id/azul"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_button_azul"
+                    android:button="@null"
+                    android:buttonTint="#000000"
+                    android:fontFamily="@font/irish_grover"
+                    android:foregroundTint="#000000"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+                <RadioButton
+                    android:id="@+id/morado"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_button_morado"
+                    android:button="@null"
+                    android:buttonTint="#000000"
+                    android:fontFamily="@font/irish_grover"
+                    android:foregroundTint="#000000"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+                <RadioButton
+                    android:id="@+id/naranja"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_button_naranja"
+                    android:button="@null"
+                    android:buttonTint="#000000"
+                    android:fontFamily="@font/irish_grover"
+                    android:foregroundTint="#000000"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+                <RadioButton
+                    android:id="@+id/verde"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/radio_button_verde"
+                    android:button="@null"
+                    android:buttonTint="#000000"
+                    android:fontFamily="@font/irish_grover"
+                    android:foregroundTint="#000000"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Botón Amarillo -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHorizontal_bias="0.3"
-                    app:layout_constraintVertical_bias="0.3">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!-- Botón Azul -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintVertical_bias="0.5">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!-- Botón Morado -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHorizontal_bias="0.7"
-                    app:layout_constraintVertical_bias="0.7">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!-- Botón Naranja -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHorizontal_bias="0.9"
-                    app:layout_constraintVertical_bias="0.9">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <!-- Botón Verde -->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHorizontal_bias="0.2"
-                    app:layout_constraintVertical_bias="0.8">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </RadioGroup>
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_verde"
-                app:layout_constraintBottom_toBottomOf="@+id/boton_verde"
-                app:layout_constraintEnd_toEndOf="@+id/boton_verde"
-                app:layout_constraintStart_toStartOf="@+id/boton_verde"
-                app:layout_constraintTop_toTopOf="@+id/boton_verde" />
-
-            <RadioButton
-                android:id="@+id/boton_verde"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:button="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.652"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.63" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_marron"
-                app:layout_constraintBottom_toBottomOf="@+id/boton_marron"
-                app:layout_constraintEnd_toEndOf="@+id/boton_marron"
-                app:layout_constraintStart_toStartOf="@+id/boton_marron"
-                app:layout_constraintTop_toTopOf="@+id/boton_marron" />
-
-            <RadioButton
-                android:id="@+id/boton_marron"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:button="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.553" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_amarillo"
-                app:layout_constraintBottom_toBottomOf="@+id/boton_amarillo"
-                app:layout_constraintEnd_toEndOf="@+id/boton_amarillo"
-                app:layout_constraintStart_toStartOf="@+id/boton_amarillo"
-                app:layout_constraintTop_toTopOf="@+id/boton_amarillo" />
-
-            <RadioButton
-                android:id="@+id/boton_amarillo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:button="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.347"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.63" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_azul"
-                app:layout_constraintBottom_toBottomOf="@+id/boton_azul"
-                app:layout_constraintEnd_toEndOf="@+id/boton_azul"
-                app:layout_constraintStart_toStartOf="@+id/boton_azul"
-                app:layout_constraintTop_toTopOf="@+id/boton_azul" />
-
-            <RadioButton
-                android:id="@+id/boton_azul"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:button="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.347"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.865" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_morado"
-                app:layout_constraintBottom_toBottomOf="@+id/boton_morado"
-                app:layout_constraintEnd_toEndOf="@+id/boton_morado"
-                app:layout_constraintStart_toStartOf="@+id/boton_morado"
-                app:layout_constraintTop_toTopOf="@+id/boton_morado" />
-
-            <RadioButton
-                android:id="@+id/boton_morado"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:button="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.938" />
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/color_naranja"
-                app:layout_constraintBottom_toBottomOf="@+id/boton_naranja"
-                app:layout_constraintEnd_toEndOf="@+id/boton_naranja"
-                app:layout_constraintStart_toStartOf="@+id/boton_naranja"
-                app:layout_constraintTop_toTopOf="@+id/boton_naranja" />
-
-            <RadioButton
-                android:id="@+id/boton_naranja"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:button="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.652"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.865" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="309dp"
+            android:layout_marginEnd="322dp"
+            android:layout_marginBottom="37dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_nombre"
+            app:srcCompat="@drawable/checkverde" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

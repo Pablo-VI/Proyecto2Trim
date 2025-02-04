@@ -1,7 +1,10 @@
 package com.example.proyecto2trim;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +20,17 @@ public class inicio extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_inicio);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        // Inicializamos el ImageButton
+        ImageButton cambiarActivityBtn = findViewById(R.id.play);
+
+        // Configuramos el listener del ImageButton
+        cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cambiar a la segunda Activity
+                Intent intent = new Intent(inicio.this, selection.class);
+                startActivity(intent);
+            }
         });
     }
 }

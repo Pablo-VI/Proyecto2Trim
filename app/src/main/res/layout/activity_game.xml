@@ -9,7 +9,6 @@
     tools:context=".game">
 
 
-
     <ImageView
         android:id="@+id/tablero"
         android:layout_width="300dp"
@@ -18,11 +17,12 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="216dp"
         android:layout_marginBottom="56dp"
+        android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tablero" />
+        app:srcCompat="@drawable/tablerocorto" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="212dp"
