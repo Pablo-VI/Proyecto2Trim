@@ -9,6 +9,7 @@ import java.net.Socket;
 public class Client implements Runnable {
     private final int port; // Puerto para conectarse al servidor
     private final PropertyChangeSupport support; // Soporte para notificar cambios a los observadores
+    private Player player;
 
     /**
      * Constructor para inicializar el cliente.
