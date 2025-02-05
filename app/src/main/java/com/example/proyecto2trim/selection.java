@@ -3,10 +3,13 @@ package com.example.proyecto2trim;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.proyecto2trim.databinding.ActivitySelectionBinding;
 
 public class selection extends AppCompatActivity {
+
+    private String color = ""; // Variable para almacenar el color seleccionado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,34 @@ public class selection extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+        // Obtener referencia al RadioGroup
+        RadioGroup radioGroup = binding.radioGroup;
+
+        // Configurar el listener para el RadioGroup
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // Determinar qué RadioButton fue seleccionado
+                if (checkedId == R.id.marron) {
+                    color = "marrón";
+                } else if (checkedId == R.id.amarillo) {
+                    color = "amarillo";
+                } else if (checkedId == R.id.azul) {
+                    color = "azul";
+                } else if (checkedId == R.id.morado) {
+                    color = "morado";
+                } else if (checkedId == R.id.naranja) {
+                    color = "naranja";
+                } else if (checkedId == R.id.verde) {
+                    color = "verde";
+                }
+
+                // Aquí puedes usar la variable `color` como necesites
+                // Por ejemplo, mostrarla en un Log o usarla en otra parte de tu aplicación
+                System.out.println("Color seleccionado: " + color);
+            }
+        });
     }
 
     @Override
