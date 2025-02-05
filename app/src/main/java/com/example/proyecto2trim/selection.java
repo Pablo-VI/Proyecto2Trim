@@ -48,6 +48,9 @@ public class selection extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        // Configurar el botón "flecha_atras" para volver a la pantalla anterior
+        binding.flechaAtras.setOnClickListener(v -> finish());
+
         // Obtener referencia al RadioGroup
         RadioGroup radioGroup = binding.radioGroup;
 

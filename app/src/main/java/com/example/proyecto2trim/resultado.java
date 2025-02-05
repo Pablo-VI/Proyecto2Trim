@@ -1,27 +1,18 @@
 package com.example.proyecto2trim;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.proyecto2trim.databinding.ActivityInicioBinding;
+import com.example.proyecto2trim.databinding.ActivityResultadoBinding;
 
-public class inicio extends AppCompatActivity {
+public class resultado extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //EdgeToEdge.enable(this);
-        //setContentView(R.layout.activity_inicio);
-        ActivityInicioBinding binding = ActivityInicioBinding.inflate(getLayoutInflater());
+        ActivityResultadoBinding binding = ActivityResultadoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Forzar orientación horizontal
@@ -39,18 +30,10 @@ public class inicio extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn = findViewById(R.id.play);
+        // Configurar el botón "flecha_atras" para volver a la pantalla anterior
+        binding.flechaAtras.setOnClickListener(v -> finish());
 
-        // Configuramos el listener del ImageButton
-        cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Cambiar a la segunda Activity
-                Intent intent = new Intent(inicio.this, lobby.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     @Override

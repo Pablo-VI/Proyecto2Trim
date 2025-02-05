@@ -1,5 +1,6 @@
 package com.example.proyecto2trim;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,20 @@ public class tirar_dado extends AppCompatActivity {
         ActivityTirarDadoBinding binding = ActivityTirarDadoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Forzar orientación horizontal
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        // Ocultar la barra de estado y la barra de navegación
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+
+        // Ocultar la ActionBar si está presente
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         // Crear todas las casillas del tablero para el jugador
         //Inicializar todas las casillas del tablero
@@ -245,5 +260,16 @@ public class tirar_dado extends AppCompatActivity {
     {
         // Aquí se puede actualizar la interfaz de usuario con la nueva posición del jugador.
         // Por ejemplo, mostrar la posición en un TextView o mover una ficha en el tablero.
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Asegurarse de que la pantalla completa se mantenga al volver a la actividad
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
