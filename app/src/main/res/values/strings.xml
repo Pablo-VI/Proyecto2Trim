@@ -20,6 +20,8 @@
     <string name="d_maestro">MAESTRO</string>
     <string name="modo">MODO DE JUEGO</string>
     <string name="dificultad">DIFICULTAD</string>
+    <string name="jugadores">JUGADORES</string>
+
 </resources>
 
 

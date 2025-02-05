@@ -13,21 +13,26 @@
         android:theme="@style/Theme.Proyecto2ºTrim"
         tools:targetApi="31">
         <activity
+            android:name=".lobby"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
             android:name=".inicio"
             android:exported="true"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".dificultad"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->/>
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->
         <activity
             android:name=".game"
             android:exported="false"
@@ -52,11 +57,9 @@
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity">
-        </activity>
-
-        <!-- Actividad pregunta -->
-        <activity android:name=".pregunta"
+            tools:ignore="LockedOrientationActivity"/> <!-- Actividad pregunta -->
+        <activity
+            android:name=".pregunta"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />

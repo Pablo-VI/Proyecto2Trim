@@ -28,7 +28,7 @@ public class inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
-                Intent intent = new Intent(inicio.this, selection.class);
+                Intent intent = new Intent(inicio.this, lobby.class);
                 startActivity(intent);
             }
         });
