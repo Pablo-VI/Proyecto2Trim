@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">A ver si aciertas!</string>
+    <string name="app_name">Proyecto 2ºTrim</string>
     <string name="seleccionaIdioma">Selecciona un idioma:</string>
     <string name="crearjuego">CREA TU JUEGO</string>
     <string name="crear">CREAR</string>
@@ -22,6 +22,7 @@
     <string name="modo">MODO DE JUEGO</string>
     <string name="dificultad">DIFICULTAD</string>
     <string name="tirar">Tirar</string>
+    <string name="jugadores">JUGADORES</string>
 
 </resources>
 
