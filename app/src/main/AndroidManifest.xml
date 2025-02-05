@@ -32,17 +32,17 @@
             android:name=".dificultad"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de dificultad -->/>
         <activity
             android:name=".game"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de game -->
         <activity
             android:name=".tirar_dado"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de selección siempre en horizontal -->
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de tirar dado -->
         <activity
             android:name=".selection"
             android:exported="false"
@@ -57,12 +57,12 @@
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/> <!-- Actividad pregunta -->
-        <activity
-            android:name=".pregunta"
+            tools:ignore="LockedOrientationActivity"/> <!-- Actividad principal -->
+
+        <activity android:name=".pregunta"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" />
+            tools:ignore="LockedOrientationActivity" /> <!-- Actividad pregunta -->
     </application>
 
 </manifest>
