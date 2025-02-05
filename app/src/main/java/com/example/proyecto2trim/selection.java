@@ -20,7 +20,7 @@ public class selection extends AppCompatActivity {
 
         String playerName = binding.escribetunombre.getText().toString();
 
-        private void openDetailActivity(String playerName, String color, Table position, int numThrows)
+      /*private void openDetailActivity(String playerName, String color, Table position, int numThrows)
         {
             Intent intent = new Intent(this, Client.class); //Creamos el intent
 
@@ -32,7 +32,7 @@ public class selection extends AppCompatActivity {
 
             startActivity(intent);  //Lanzamos el intent
         }
-
+*/
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
