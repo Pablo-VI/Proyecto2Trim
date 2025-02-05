@@ -15,8 +15,11 @@ public class pregunta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //ActivityPreguntaBinding binding = ActivityPreguntaBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
         ActivityPreguntaBinding binding = ActivityPreguntaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
