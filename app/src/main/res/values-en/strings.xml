@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guess It!</string>
+    <string name="seleccionaIdioma">Choose your lenguage:</string>
+    <string name="crearjuego">CREATE A GAME</string>
+    <string name="crear">CREATE</string>
+    <string name="unirse">JOIN</string>
+    <string name="multijugador">JOIN A GAME</string>
+    <string name="dado">ROLL THE DICE</string>
+    <string name="todo">ALL</string>
+    <string name="eligetunombre">CHOOSE YOUR NAME:</string>
+    <string name="camponombre">Enter your name</string>
+    <string name="eligetucolor">CHOOSE YOUR COLOR:</string>
+    <string name="eligeFila">CHOOSE YOUR ROW</string>
+    <string name="nombre">NAME:</string>
+    <string name="turnopregunta">NOW THINKING:</string>
+    <string name="resultado">RESULT</string>
+    <string name="d_trivial">TRIVIA</string>
+    <string name="d_clock">TIME TRIAL</string>
+    <string name="d_relajado">RELAXED</string>
+    <string name="d_desafiante">CHALLENGING</string>
+    <string name="d_maestro">MASTER</string>
+    <string name="modo">GAME MODE</string>
+    <string name="dificultad">DIFFICULTY</string>
+    <string name="tirar">Roll</string>
+</resources>

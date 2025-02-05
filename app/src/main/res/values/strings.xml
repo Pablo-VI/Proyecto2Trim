@@ -13,6 +13,7 @@
     <string name="eligeFila">ELIGE TU FILA</string>
     <string name="nombre">NOMBRE:</string>
     <string name="turnopregunta">LE TOCA PENSAR A:</string>
+    <string name="resultado">RESULTADO</string>
     <string name="d_trivial">TRIVIAL</string>
     <string name="d_clock">CONTRARRELOJ</string>
     <string name="d_relajado">RELAJADO</string>
@@ -20,6 +21,7 @@
     <string name="d_maestro">MAESTRO</string>
     <string name="modo">MODO DE JUEGO</string>
     <string name="dificultad">DIFICULTAD</string>
+    <string name="tirar">Tirar</string>
     <string name="jugadores">JUGADORES</string>
 
 </resources>
