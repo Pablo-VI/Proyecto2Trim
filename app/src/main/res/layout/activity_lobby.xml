@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".game">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ladoizquierdo"
+        android:layout_width="304dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="390dp"
+        android:layout_marginBottom="107dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/jugador3"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jugador2" />
+
+        <TextView
+            android:id="@+id/jugador2"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="87dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/jugador1"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="45dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/jugador2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ladoderecho"
+        android:layout_width="304dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="107dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ladoizquierdo"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/jugador6"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jugador5" />
+
+        <TextView
+            android:id="@+id/jugador5"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="87dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/jugador4"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="45dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/jugador5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="729dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/ladoizquierdo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/jugadores"
+            android:layout_width="160dp"
+            android:layout_height="26dp"
+            android:backgroundTint="#000000"
+            android:fontFamily="@font/irish_grover"
+            android:foregroundTint="#000000"
+            android:text="@string/jugadores"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.618"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="720dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ladoizquierdo">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.559"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.29"
+            app:srcCompat="@drawable/checkverde" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
