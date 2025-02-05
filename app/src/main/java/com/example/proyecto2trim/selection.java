@@ -1,5 +1,6 @@
 package com.example.proyecto2trim;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,21 @@ public class selection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        String playerName = binding.escribetunombre.getText().toString();
+
+        private void openDetailActivity(String playerName, String color, Table position, int numThrows)
+        {
+            Intent intent = new Intent(this, Client.class); //Creamos el intent
+
+            //Creamos nuevo jugador
+            Player player = new Player (playerName, color, position, numThrows);
+
+            //Capturamos el objeto player a entregar
+            intent.putExtra(Client.PLAYER, player); //Almacenamos variables con el putExtra
+
+            startActivity(intent);  //Lanzamos el intent
+        }
 
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
