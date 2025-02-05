@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.proyecto2trim.databinding.ActivityMainBinding;
 import com.example.proyecto2trim.databinding.ActivityTirarDadoBindingImpl;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,8 +15,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //setContentView(R.layout.activity_main);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         // Inicializamos el ImageButton
         ImageButton cambiarActivityBtn = findViewById(R.id.button_Spanish);
 
