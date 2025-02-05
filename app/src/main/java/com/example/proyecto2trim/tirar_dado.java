@@ -21,7 +21,7 @@ public class tirar_dado extends AppCompatActivity {
     private ImageView imageView; // Vista para mostrar la imagen del dado
     private Button generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
-    private Player jugador; // Jugador que está usando la aplicación
+    private Client jugador; // Jugador que está usando la aplicación
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

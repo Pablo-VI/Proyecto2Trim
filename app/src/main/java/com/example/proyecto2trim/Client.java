@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
-public class Client implements Runnable {
+public class Client implements Runnable, Parcelable {
     private int port; // Puerto para conectarse al servidor
     private PropertyChangeSupport support; // Soporte para notificar cambios a los observadores
     private String name;
