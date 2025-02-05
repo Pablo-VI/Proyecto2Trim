@@ -24,8 +24,20 @@ public class inicio extends AppCompatActivity {
         ActivityInicioBinding binding = ActivityInicioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        // Ocultar la barra de estado y la barra de navegación
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+
+        // Ocultar la ActionBar si está presente
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         // Inicializamos el ImageButton
         ImageButton cambiarActivityBtn = findViewById(R.id.play);
@@ -39,5 +51,16 @@ public class inicio extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Asegurarse de que la pantalla completa se mantenga al volver a la actividad
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

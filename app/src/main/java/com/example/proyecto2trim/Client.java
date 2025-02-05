@@ -34,10 +34,10 @@ public class Client implements Runnable {
     @Override
     public void run()
     {
-        if(codigoPartida)
-        {
+        //if(codigoPartida)
+        //{
 
-        }
+        //}
         final String HOST = "127.0.0.1"; // Dirección IP del servidor (localhost)
         try (// Crear un socket para conectarse al servidor
                 Socket sc = new Socket(HOST, port);

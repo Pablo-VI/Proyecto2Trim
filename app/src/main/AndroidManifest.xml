@@ -16,7 +16,7 @@
             android:name=".inicio"
             android:exported="true"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity"> <!-- MENU INICIO -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,38 +27,43 @@
             android:name=".dificultad"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de dificultad -->/>
+            tools:ignore="LockedOrientationActivity" /> <!-- MODO Y DIFICULTAD -->
         <activity
             android:name=".game"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de game -->
+            tools:ignore="LockedOrientationActivity" /> <!-- JUEGO PRINCIPAL TABLERO -->
         <activity
             android:name=".tirar_dado"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad de tirar dado -->
+            tools:ignore="LockedOrientationActivity" /> <!-- TIRAR DADO -->
         <activity
             android:name=".selection"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Menú principal -->
+            tools:ignore="LockedOrientationActivity" /> <!-- NOMBRE Y COLOR -->
         <activity
             android:name=".menu"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad principal lanzadora -->
+            tools:ignore="LockedOrientationActivity" /> <!-- CREAR Y UNIRSE PARTIDA -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity"> <!-- IDIOMA -->
         </activity>
 
         <activity android:name=".pregunta"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" /> <!-- Actividad pregunta -->
+            tools:ignore="LockedOrientationActivity" /> <!-- PREGUNTA -->
+
+        <activity android:name=".resultado"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" /> <!-- RESULTADO -->
     </application>
 
 </manifest>
