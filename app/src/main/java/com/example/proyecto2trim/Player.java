@@ -1,6 +1,11 @@
 package com.example.proyecto2trim;
 
-public class Player {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Player implements Parcelable {
     private String name;
     private String color;
     private Table position; // La casilla donde está el jugador
@@ -9,9 +14,29 @@ public class Player {
     public Player(String name, String color, Table position, int numThrows) {
         this.name = name;
         this.color = color;
-        this.position = this.position; // Se asigna una casilla existente
-        this.numThrows = this.numThrows;
+        this.position = position; // Se asigna una casilla existente
+        this.numThrows = numThrows;
     }
+
+    //Serialización
+    protected Player(Parcel in) {
+        name = in.readString();
+        color = in.readString();
+        position = in.readParcelable(Table.class.getClassLoader()); // Leer Table como Parcelable
+        numThrows = in.readInt();
+    }
+
+    public static final Parcelable.Creator<Player> CREATOR = new Parcelable.Creator<Player>() {
+        @Override
+        public Player createFromParcel(Parcel in) {
+            return new Player(in);
+        }
+
+        @Override
+        public Player[] newArray(int size) {
+            return new Player[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -47,5 +72,18 @@ public class Player {
 
     public void moveTo(Table newPosition) {
         this.position = newPosition;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(color);
+        parcel.writeParcelable(position, i); // Escribir Table como Parcelable
+        parcel.writeInt(numThrows);
     }
 }
