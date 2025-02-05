@@ -23,4 +23,5 @@
     <string name="modo">GAME MODE</string>
     <string name="dificultad">DIFFICULTY</string>
     <string name="tirar">Roll</string>
+    <string name="jugadores">PLAYERS</string>
 </resources>

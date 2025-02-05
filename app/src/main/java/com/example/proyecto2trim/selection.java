@@ -19,7 +19,8 @@ public class selection extends AppCompatActivity {
         ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String playerName = binding.escribetunombre.getText().toString();
+        // Obtener el nombre del jugador
+        playerName = binding.escribetunombre.getText().toString();
 
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -82,16 +83,18 @@ public class selection extends AppCompatActivity {
     }
 
     private void openDetailActivity(String playerName, String color) {
-        Intent intent = new Intent(this, Client.class); //Creamos el intent
+        Intent intent = new Intent(this, Client.class); // Asegúrate de que sea ClientActivity
 
-        //Creamos nuevo jugador
-        Player player = new Player(playerName, color);
+        // Crear un nuevo cliente con los datos introducidos
+        Client client = new Client(0, playerName, color, null); // Usamos un valor por defecto para el puerto y la posición
 
-        //Capturamos el objeto player a entregar
-        intent.putExtra(Client.PLAYER, player); //Almacenamos variables con el putExtra
+        // Pasamos el objeto Client a través de putExtra, utilizando la clave adecuada
+        intent.putExtra("CLIENT", client); // Pasamos el cliente como Parcelable
 
-        startActivity(intent);  //Lanzamos el intent
+        // Iniciamos la actividad
+        startActivity(intent);
     }
+
 
     @Override
     protected void onResume() {
