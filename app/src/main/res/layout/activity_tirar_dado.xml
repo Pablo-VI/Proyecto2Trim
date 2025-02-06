@@ -61,7 +61,7 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="112dp"
                 android:layout_marginBottom="70dp"
-                android:text="Tirar"
+                android:text="@string/tirar"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
