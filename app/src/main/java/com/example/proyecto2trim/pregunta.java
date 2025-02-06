@@ -21,6 +21,7 @@ public class pregunta extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
+        TextView TextView = binding.respuesta1;
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -36,8 +37,7 @@ public class pregunta extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        }
-
+    }
     @Override
     protected void onResume() {
         super.onResume();

@@ -24,4 +24,6 @@
     <string name="dificultad">DIFFICULTY</string>
     <string name="tirar">Roll</string>
     <string name="jugadores">PLAYERS</string>
+    <string name="hintMenu">XXXX</string>
+    <string name="toastCreateLobby">The game code must have 4 numbers.</string>
 </resources>
