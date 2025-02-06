@@ -1,12 +1,11 @@
 package com.example.proyecto2trim;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,25 +22,18 @@ public class tirar_dado extends AppCompatActivity {
     private Client cliente; // Cliente para conectarse al servidor
     private Client jugador; // Jugador que está usando la aplicación
 
+
+    Button boton = findViewById(R.id.button_tirar);
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_tirar_dado); // Establecer el layout de la actividad
         ActivityTirarDadoBinding binding = ActivityTirarDadoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        ocultarBarrasDeSistema();
 
-        // Ocultar la barra de estado y la barra de navegación
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-        decorView.setSystemUiVisibility(uiOptions);
-
-        // Ocultar la ActionBar si está presente
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -99,106 +91,98 @@ public class tirar_dado extends AppCompatActivity {
         ImageButton buttonRow5 = findViewById(R.id.boton_fila_5);
         ImageButton buttonRow6 = findViewById(R.id.boton_fila_6);
         TextView textChooseRow = findViewById(R.id.text_chooseRow);
+  
+        inicializarTablero();
 
-        // Ocultar los botones inicialmente
-        buttonRow1.setVisibility(View.GONE);
-        buttonRow2.setVisibility(View.GONE);
-        buttonRow3.setVisibility(View.GONE);
-        buttonRow4.setVisibility(View.GONE);
-        buttonRow5.setVisibility(View.GONE);
-        buttonRow6.setVisibility(View.GONE);
-        textChooseRow.setVisibility(View.GONE);
+        imageView = findViewById(R.id.dice);
+        generarNumeroBtn = findViewById(R.id.button_tirar);
+        ocultarBotonesFilas();
 
-        // Inicializar jugador con valores predeterminados
-        jugador = new Player("player1", "Azul", inicio, 0);
-
-        // Conectar al servidor en el puerto 12345
+        // Se crea el cliente usando el constructor que asigna valores por defecto
         cliente = new Client(12345);
-        new Thread(cliente).start(); // Iniciar el cliente en un hilo separado
+        new Thread(cliente).start();
 
-        // Escuchar actualizaciones del servidor
+        // Se añade un listener para recibir actualizaciones desde el servidor
         cliente.addObserver(evt -> {
-            if ("jugador".equals(evt.getPropertyName()))
-            { // Si el evento es sobre un jugador
-                Player actualizado = (Player) evt.getNewValue(); // Obtener el jugador actualizado
-                runOnUiThread(() -> actualizarInterfaz(actualizado)); // Actualizar la interfaz en el hilo principal
+            if ("jugador".equals(evt.getPropertyName())) {
+                Client actualizado = (Client) evt.getNewValue();
+                runOnUiThread(() -> actualizarInterfaz(actualizado));
             }
         });
 
-        // Configurar el listener para el botón de lanzar el dado
-        generarNumeroBtn.setOnClickListener(v -> {
-            // Generar un número aleatorio entre 1 y 6
-            Random rand = new Random();
-            int numeroAleatorio = rand.nextInt(6) + 1;
-            jugador.setNumThrows(jugador.getNumThrows()+1);
-
-            // Actualizar la posición del jugador sumando el número aleatorio
-            //jugador.moveTo(jugador.getPosition() + numeroAleatorio);
-
-            // Enviar la actualización al servidor en un hilo separado
-            new Thread(() -> {
-                try (Socket sc = new Socket("127.0.0.1", 12345); // Conectar al servidor
-                     ObjectOutputStream oos = new ObjectOutputStream(sc.getOutputStream()))
-                { // Crear flujo de salida
-                    oos.writeObject(jugador); // Enviar el objeto jugador al servidor
-                } catch (IOException ex) {
-                    ex.printStackTrace(); // Manejar errores de conexión o envío
-                }
-            }).start();
-
-            // Cambiar la imagen del dado según el número generado
-            cambiarImagenDado(numeroAleatorio);
-
-            // Mostrar los botones solo en la primera tirada
-            if (jugador.getNumThrows() == 1) {
-                buttonRow1.setVisibility(View.VISIBLE);
-                buttonRow2.setVisibility(View.VISIBLE);
-                buttonRow3.setVisibility(View.VISIBLE);
-                buttonRow4.setVisibility(View.VISIBLE);
-                buttonRow5.setVisibility(View.VISIBLE);
-                buttonRow6.setVisibility(View.VISIBLE);
-                textChooseRow.setVisibility(View.VISIBLE);
-            }
-        });
+        generarNumeroBtn.setOnClickListener(v -> tirarDado());
     }
 
-    /**
-     * Método para cambiar la imagen del dado según el número generado.
-     *
-     * @param numero El número generado (1-6).
-     */
-    private void cambiarImagenDado(int numero)
-    {
-        int[] recursos = {
-                R.drawable.dado_1, // Imagen para el número 1
-                R.drawable.dado_2, // Imagen para el número 2
-                R.drawable.dado_3, // Imagen para el número 3
-                R.drawable.dado_4, // Imagen para el número 4
-                R.drawable.dado_5, // Imagen para el número 5
-                R.drawable.dado_6  // Imagen para el número 6
-        };
-        imageView.setImageResource(recursos[numero - 1]); // Establecer la imagen correspondiente
-    }
-
-    /**
-     * Método para actualizar la interfaz con la nueva posición del jugador.
-     *
-     * @param jugador El jugador con la posición actualizada.
-     */
-    private void actualizarInterfaz(Player jugador)
-    {
-        // Aquí se puede actualizar la interfaz de usuario con la nueva posición del jugador.
-        // Por ejemplo, mostrar la posición en un TextView o mover una ficha en el tablero.
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Asegurarse de que la pantalla completa se mantenga al volver a la actividad
+    private void ocultarBarrasDeSistema() {
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
     }
+
+    private void ocultarBotonesFilas() {
+        int[] botonesFilas = {
+                R.id.boton_fila_1, R.id.boton_fila_2, R.id.boton_fila_3,
+                R.id.boton_fila_4, R.id.boton_fila_5, R.id.boton_fila_6
+        };
+        for (int botonId : botonesFilas) {
+            findViewById(botonId).setVisibility(View.GONE);
+        }
+        findViewById(R.id.text_chooseRow).setVisibility(View.GONE);
+    }
+
+    private void tirarDado() {
+        Random rand = new Random();
+        int numeroAleatorio = rand.nextInt(6) + 1;
+
+        new Thread(() -> {
+            try (Socket sc = new Socket("127.0.0.1", 12345);
+                 ObjectOutputStream oos = new ObjectOutputStream(sc.getOutputStream())) {
+                // Se envía el objeto cliente (con sus datos actuales) al servidor
+                oos.writeObject(cliente);
+                oos.flush();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }).start();
+
+        cambiarImagenDado(numeroAleatorio);
+    }
+
+    private void cambiarImagenDado(int numero) {
+        int[] recursos = {
+                R.drawable.dado_1, R.drawable.dado_2, R.drawable.dado_3,
+                R.drawable.dado_4, R.drawable.dado_5, R.drawable.dado_6
+        };
+        imageView.setImageResource(recursos[numero - 1]);
+    }
+
+    private void actualizarInterfaz(Client jugador) {
+        // Actualizar la interfaz según el estado del cliente/jugador
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ocultarBarrasDeSistema();
+    }
+
+    private void inicializarTablero() {
+        // Inicializar el tablero si es necesario
+    }
+
+    // Inicializamos el ImageButton
+    Button cambiarActivity = findViewById(R.id.button_tirar);
+
+    // Configuramos el listener del ImageButton
+        cambiarActivity.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Cambiar a la segunda Activity
+            Intent intent = new Intent(tirar_dado.this, pregunta.class);
+            startActivity(intent);
+        }
+    });
 }
+

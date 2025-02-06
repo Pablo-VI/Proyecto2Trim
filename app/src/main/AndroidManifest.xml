@@ -39,7 +39,7 @@
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" /> <!-- JUEGO PRINCIPAL TABLERO -->
         <activity
-            android:name=".tirar_dado"
+            android:name=".TirarDado"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" /> <!-- TIRAR DADO -->
