@@ -1,5 +1,6 @@
 package com.example.proyecto2trim;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +18,13 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Random;
 
-public class tirar_dado extends AppCompatActivity {
+public class TirarDado extends AppCompatActivity {
     private ImageView imageView; // Vista para mostrar la imagen del dado
     private Button generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
     private Player jugador; // Jugador que está usando la aplicación
+
+    Button boton = findViewById(R.id.button_tirar);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
