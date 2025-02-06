@@ -21,23 +21,6 @@ public class selection extends AppCompatActivity {
         ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-          // Obtener el nombre del jugador
-        String playerName = binding.escribetunombre.getText().toString();
-
-      /*private void openDetailActivity(String playerName, String color, Table position, int numThrows)
-        {
-            Intent intent = new Intent(this, Client.class); //Creamos el intent
-
-            //Creamos nuevo jugador
-            Player player = new Player (playerName, color, position, numThrows);
-
-            //Capturamos el objeto player a entregar
-            intent.putExtra(Client.PLAYER, player); //Almacenamos variables con el putExtra
-
-            startActivity(intent);  //Lanzamos el intent
-        }
-*/
-
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -79,7 +62,6 @@ public class selection extends AppCompatActivity {
             // Aquí puedes usar la variable `color` como necesites
             // Por ejemplo, mostrarla en un Log o usarla en otra parte de tu aplicación
             System.out.println("Color seleccionado: " + color);
-            System.out.println("Nombre introducido: " + playerName);
         });
 
         // Configurar el botón de "check" para capturar los datos y abrir la siguiente actividad
@@ -95,6 +77,7 @@ public class selection extends AppCompatActivity {
                 // Mostrar un mensaje de error si faltan datos
                 System.out.println("Por favor, selecciona nombre y color.");
             }
+            System.out.println("Nombre introducido: " + playerName);
         });
     }
 
@@ -110,7 +93,6 @@ public class selection extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -120,5 +102,13 @@ public class selection extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }
