@@ -20,6 +20,8 @@ public class tirar_dado extends AppCompatActivity {
     private ImageView imageView; // Vista para mostrar la imagen del dado
     private Button generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
+    private Client jugador; // Jugador que está usando la aplicación
+
 
     Button boton = findViewById(R.id.button_tirar);
 
@@ -36,6 +38,60 @@ public class tirar_dado extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        // Crear todas las casillas del tablero para el jugador
+        //Inicializar todas las casillas del tablero
+        Table [] main = new Table[35]; //35 casillas
+        Table inicio = new Table("Inicio", 0, "Inicio");
+
+        main [0] = new Table ("main", 1, "Ficha Azul");
+        main [1] = new Table ("main", 2, "Historia");
+        main [2] = new Table ("main", 3, "Tirar Dado");
+        main [3] = new Table ("main", 4, "Ciencias y Naturaleza");
+        main [4] = new Table ("main", 5, "Entretenimiento");
+        main [5] = new Table ("main", 6, "Tirar Dado");
+        main [6] = new Table ("main", 7, "Deportes y Pasatiempos");
+        main [7] = new Table ("main", 8, "Ficha Morada");
+        main [8] = new Table ("main", 9, "Deportes y Pasatiempos");
+        main [9] = new Table ("main", 10, "Tirar Dado");
+        main [10] = new Table ("main", 11, "Historia");
+        main [11] = new Table ("main", 12, "Geografía");
+        main [12] = new Table ("main", 13, "Tirar Dado");
+        main [13] = new Table ("main", 14, "Entretenimiento");
+        main [14] = new Table ("main", 15, "Ficha Verde");
+        main [15] = new Table ("main", 16, "Entretenimiento");
+        main [16] = new Table ("main", 17, "Tirar Dado");
+        main [17] = new Table ("main", 18, "Deportes y Pasatiempos");
+        main [18] = new Table ("main", 19, "Arte y Literatura");
+        main [19] = new Table ("main", 20, "Tirar Dado");
+        main [20]= new Table ("main", 21, "Geografía");
+        main [21] = new Table ("main", 22, "Ficha Amarilla");
+        main [22] = new Table ("main", 23, "Geografía");
+        main [23] = new Table ("main", 24, "Tirar Dado");
+        main [24] = new Table ("main", 25, "Entretenimiento");
+        main [25] = new Table ("main", 26, "Ciencias y Naturaleza");
+        main [26] = new Table ("main", 27, "Tirar Dado");
+        main [27] = new Table ("main", 28, "Arte y Literatura");
+        main [28] = new Table ("main", 29, "Ficha Naranja");
+        main [29] = new Table ("main", 30, "Arte y Literatura");
+        main [30] = new Table ("main", 31, "Tirar Dado");
+        main [31] = new Table ("main", 32, "Geografía");
+        main [32] = new Table ("main", 33, "Historia");
+        main [33] = new Table ("main", 34, "Tirar Dado");
+        main [34] = new Table ("main", 35, "Ciencias y Naturaleza");
+
+        // Inicializar vistas
+        imageView = findViewById(R.id.dice); // Obtener la referencia al ImageView del dado
+        generarNumeroBtn = findViewById(R.id.button_tirar); // Obtener la referencia al botón de lanzar
+
+        // Inicializar los botones que se mostrarán dinámicamente
+        ImageButton buttonRow1 = findViewById(R.id.boton_fila_1);
+        ImageButton buttonRow2 = findViewById(R.id.boton_fila_2);
+        ImageButton buttonRow3 = findViewById(R.id.boton_fila_3);
+        ImageButton buttonRow4 = findViewById(R.id.boton_fila_4);
+        ImageButton buttonRow5 = findViewById(R.id.boton_fila_5);
+        ImageButton buttonRow6 = findViewById(R.id.boton_fila_6);
+        TextView textChooseRow = findViewById(R.id.text_chooseRow);
+  
         inicializarTablero();
 
         imageView = findViewById(R.id.dice);

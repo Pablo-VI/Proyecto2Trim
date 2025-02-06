@@ -23,6 +23,8 @@
     <string name="dificultad">DIFICULTAD</string>
     <string name="tirar">Tirar</string>
     <string name="jugadores">JUGADORES</string>
+    <string name="hintMenu">XXXX</string>
+    <string name="toastCreateLobby">El código de la sala debe ser de 4 números</string>
 </resources>
 
 
