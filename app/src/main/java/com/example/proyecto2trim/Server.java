@@ -71,7 +71,7 @@ public class Server implements Runnable
             while (true)
             {
                 // Recibir la posición actualizada del jugador
-                Player jugador = (Player) ois.readObject();
+                Client jugador = (Client) ois.readObject();
 
                 // Enviar la actualización a todos los clients (excepto al que envió la actualización)
                 synchronized (clients) {
