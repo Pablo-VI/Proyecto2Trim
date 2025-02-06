@@ -22,23 +22,26 @@ public class Client implements Runnable, Parcelable {
      * Constructor para inicializar el cliente.
      *
      * @param port El port en el que el servidor está escuchando.
+     * @param name El nombre del jugador.
+     * @param color El color del jugador.
+     * @param position La posición en la tabla del jugador.
      */
-    public Client(int port, String name, String color, Table position)
-    {
-        this.port = port; // Asignar el port
-        this.support = new PropertyChangeSupport(this); // Inicializar el support para notificaciones
+    public Client(int port, String name, String color, Table position) {
+        this.port = port;
+        this.support = new PropertyChangeSupport(this);
         this.name = name;
         this.color = color;
-        this.position = position; // Se asigna una casilla existente
+        this.position = position;
     }
 
-    //Serialización
+    // Constructor para Parcel (deserialización)
     protected Client(Parcel in) {
         name = in.readString();
         color = in.readString();
         position = in.readParcelable(Table.class.getClassLoader()); // Leer Table como Parcelable
     }
 
+    // Crear un objeto Client desde un Parcel
     public static final Parcelable.Creator<Client> CREATOR = new Parcelable.Creator<Client>() {
         @Override
         public Client createFromParcel(Parcel in) {
@@ -51,6 +54,7 @@ public class Client implements Runnable, Parcelable {
         }
     };
 
+    // Getters y setters
     public String getName() {
         return name;
     }
@@ -75,56 +79,49 @@ public class Client implements Runnable, Parcelable {
         this.position = position;
     }
 
+    // Método para mover al jugador
     public void moveTo(Table newPosition) {
         this.position = newPosition;
     }
 
+    // Descripción de los contenidos para la serialización
+    @Override
     public int describeContents() {
         return 0;
     }
 
-    public void writeToParcel(@NonNull Parcel parcel, int i) {
+    // Escribir el objeto Client en un Parcel
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int flags) {
         parcel.writeString(name);
         parcel.writeString(color);
-        parcel.writeParcelable(position, i); // Escribir Table como Parcelable
+        parcel.writeParcelable(position, flags); // Escribir la posición como Parcelable
     }
-
 
     /**
      * Método para agregar un observador (listener) que escuchará los cambios.
      *
      * @param listener El observador que se agregará.
      */
-    public void addObserver(PropertyChangeListener listener)
-    {
-        support.addPropertyChangeListener(listener); // Agregar el observador
+    public void addObserver(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
     }
 
+    /**
+     * Método para iniciar la conexión al servidor.
+     */
     @Override
-    public void run()
-    {
-        //if(codigoPartida)
-        //{
-
-        //}
+    public void run() {
         final String HOST = "127.0.0.1"; // Dirección IP del servidor (localhost)
-        try (// Crear un socket para conectarse al servidor
-                Socket sc = new Socket(HOST, port);
-                // Crear un flujo de entrada para recibir objetos del servidor
-                ObjectInputStream ois = new ObjectInputStream(sc.getInputStream()))
-        {
+        try (Socket sc = new Socket(HOST, port); // Crear un socket para conectarse al servidor
+             ObjectInputStream ois = new ObjectInputStream(sc.getInputStream())) {
             // Bucle infinito para recibir actualizaciones del servidor
-            while (true)
-            {
-                // Recibir la actualización del jugador (objeto Player)
-                Client jugador = (Client) ois.readObject();
-
-                // Notificar a los observadores sobre el cambio
-                support.firePropertyChange("jugador", null, jugador);
+            while (true) {
+                Client jugador = (Client) ois.readObject(); // Recibir el objeto jugador del servidor
+                support.firePropertyChange("jugador", null, jugador); // Notificar a los observadores
             }
         } catch (IOException | ClassNotFoundException ex) {
-            // Manejar errores de conexión o de lectura de objetos
-            ex.printStackTrace(); // Imprimir la traza de la excepción
+            ex.printStackTrace(); // Manejar errores de conexión o de lectura de objetos
         }
     }
 }
