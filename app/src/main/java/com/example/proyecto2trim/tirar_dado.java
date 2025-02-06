@@ -21,8 +21,6 @@ public class tirar_dado extends AppCompatActivity {
     private Button generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
 
-    Button boton = findViewById(R.id.button_tirar);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +53,19 @@ public class tirar_dado extends AppCompatActivity {
         });
 
         generarNumeroBtn.setOnClickListener(v -> tirarDado());
+
+        // Inicializamos el Button para cambiar de Activity
+        Button cambiarActivity = findViewById(R.id.button_tirar);
+
+        // Configuramos el listener del Button
+        cambiarActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cambiar a la segunda Activity
+                Intent intent = new Intent(tirar_dado.this, pregunta.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void ocultarBarrasDeSistema() {
@@ -115,18 +126,4 @@ public class tirar_dado extends AppCompatActivity {
     private void inicializarTablero() {
         // Inicializar el tablero si es necesario
     }
-
-    // Inicializamos el ImageButton
-    Button cambiarActivity = findViewById(R.id.button_tirar);
-
-    // Configuramos el listener del ImageButton
-        cambiarActivity.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // Cambiar a la segunda Activity
-            Intent intent = new Intent(tirar_dado.this, pregunta.class);
-            startActivity(intent);
-        }
-    });
 }
-
