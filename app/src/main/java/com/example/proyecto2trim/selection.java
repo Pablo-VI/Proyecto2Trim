@@ -8,6 +8,8 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.proyecto2trim.databinding.ActivitySelectionBinding;
 
+import java.io.Serializable;
+
 public class selection extends AppCompatActivity {
 
     private String color = ""; // Variable para almacenar el color seleccionado
@@ -89,8 +91,7 @@ public class selection extends AppCompatActivity {
         Client client = new Client(0, playerName, color, null); // Usamos un valor por defecto para el puerto y la posición
 
         // Pasamos el objeto Client a través de putExtra, utilizando la clave adecuada
-        intent.putExtra("CLIENT", client); // Pasamos el cliente como Parcelable
-
+        intent.putExtra("CLIENT", (Serializable) client); // If client is Serializable
         // Iniciamos la actividad
         startActivity(intent);
     }

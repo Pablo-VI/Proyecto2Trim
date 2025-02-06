@@ -70,8 +70,6 @@ public class Server implements Runnable
             // Bucle infinito para recibir y enviar actualizaciones
             while (true)
             {
-                // Recibir la posición actualizada del jugador
-                Player jugador = (Player) ois.readObject();
 
                 // Enviar la actualización a todos los clients (excepto al que envió la actualización)
                 synchronized (clients) {
@@ -81,13 +79,13 @@ public class Server implements Runnable
                         { // No enviar la actualización al mismo cliente
                             // Crear un flujo de salida para el cliente actual
                             ObjectOutputStream out = new ObjectOutputStream(c.getOutputStream());
-                            out.writeObject(jugador); // Enviar el objeto Player
+                            out.writeObject(cliente); // Enviar el objeto Player
                             out.flush(); // Asegurar que los datos se envíen
                         }
                     }
                 }
             }
-        } catch (IOException | ClassNotFoundException ex) {
+        } catch (IOException ex) {
             // Manejar errores de entrada/salida o de lectura de objetos
             ex.printStackTrace(); // Imprimir la traza de la excepción
         }

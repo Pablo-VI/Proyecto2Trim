@@ -2,18 +2,20 @@ package com.example.proyecto2trim;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import androidx.annotation.NonNull;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.net.Socket;
 
-public class Client implements Runnable, Parcelable {
+public class Client implements Runnable, Parcelable, Serializable {
+    private static final long serialVersionUID = 1L;
+
     private int port; // Puerto para conectarse al servidor
-    private PropertyChangeSupport support; // Soporte para notificar cambios a los observadores
+    private transient PropertyChangeSupport support; // Soporte para notificar cambios a los observadores (no serializable)
     private String name;
     private String color;
     private Table position; // La casilla donde está el jugador
@@ -21,7 +23,7 @@ public class Client implements Runnable, Parcelable {
     /**
      * Constructor para inicializar el cliente.
      *
-     * @param port El port en el que el servidor está escuchando.
+     * @param port El puerto en el que el servidor está escuchando.
      * @param name El nombre del jugador.
      * @param color El color del jugador.
      * @param position La posición en la tabla del jugador.
@@ -34,11 +36,17 @@ public class Client implements Runnable, Parcelable {
         this.position = position;
     }
 
+    // Constructor sobrecargado que asigna valores por defecto
+    public Client(int port) {
+        this(port, "JugadorDefault", "Rojo", new Table("A", 1, "Normal"));
+    }
+
     // Constructor para Parcel (deserialización)
     protected Client(Parcel in) {
         name = in.readString();
         color = in.readString();
         position = in.readParcelable(Table.class.getClassLoader()); // Leer Table como Parcelable
+        support = new PropertyChangeSupport(this);
     }
 
     // Crear un objeto Client desde un Parcel
@@ -84,18 +92,17 @@ public class Client implements Runnable, Parcelable {
         this.position = newPosition;
     }
 
-    // Descripción de los contenidos para la serialización
+    // Métodos de Parcelable
     @Override
     public int describeContents() {
         return 0;
     }
 
-    // Escribir el objeto Client en un Parcel
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int flags) {
         parcel.writeString(name);
         parcel.writeString(color);
-        parcel.writeParcelable(position, flags); // Escribir la posición como Parcelable
+        parcel.writeParcelable(position, flags);
     }
 
     /**
@@ -113,15 +120,15 @@ public class Client implements Runnable, Parcelable {
     @Override
     public void run() {
         final String HOST = "127.0.0.1"; // Dirección IP del servidor (localhost)
-        try (Socket sc = new Socket(HOST, port); // Crear un socket para conectarse al servidor
+        try (Socket sc = new Socket(HOST, port);
              ObjectInputStream ois = new ObjectInputStream(sc.getInputStream())) {
             // Bucle infinito para recibir actualizaciones del servidor
             while (true) {
-                Client jugador = (Client) ois.readObject(); // Recibir el objeto jugador del servidor
-                support.firePropertyChange("jugador", null, jugador); // Notificar a los observadores
+                Client jugador = (Client) ois.readObject();
+                support.firePropertyChange("jugador", null, jugador);
             }
         } catch (IOException | ClassNotFoundException ex) {
-            ex.printStackTrace(); // Manejar errores de conexión o de lectura de objetos
+            ex.printStackTrace();
         }
     }
 }
