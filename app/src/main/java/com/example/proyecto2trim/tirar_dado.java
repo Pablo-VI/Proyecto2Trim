@@ -18,7 +18,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Random;
 
-public class TirarDado extends AppCompatActivity {
+public class tirar_dado extends AppCompatActivity {
     private ImageView imageView; // Vista para mostrar la imagen del dado
     private Button generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
@@ -275,4 +275,17 @@ public class TirarDado extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
     }
+
+    // Inicializamos el ImageButton
+    Button cambiarActivity = findViewById(R.id.button_tirar);
+
+    // Configuramos el listener del ImageButton
+        cambiarActivity.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Cambiar a la segunda Activity
+            Intent intent = new Intent(tirar_dado.this, pregunta.class);
+            startActivity(intent);
+        }
+    });
 }
