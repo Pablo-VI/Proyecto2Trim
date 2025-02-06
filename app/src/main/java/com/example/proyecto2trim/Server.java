@@ -70,7 +70,6 @@ public class Server implements Runnable
             // Bucle infinito para recibir y enviar actualizaciones
             while (true)
             {
-
                 // Enviar la actualización a todos los clients (excepto al que envió la actualización)
                 synchronized (clients) {
                     for (Socket c : clients)
