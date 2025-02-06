@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Random;
 
-public class TirarDado extends AppCompatActivity {
+public class tirar_dado extends AppCompatActivity {
     private ImageView imageView; // Vista para mostrar la imagen del dado
     private Button generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
