@@ -60,13 +60,13 @@ public class menu extends AppCompatActivity {
             else
             {
                 // Llamar al método para abrir la Activity dificultad
-                openDetailActivity(createCode);
+                openDificultadActivity(createCode);
             }
         });
 
         if (createLobby == joinLobby)
         {
-            openDetailActivity(createCode);
+            openSelectionActivity(createCode);
         }
         else
         {
@@ -75,9 +75,19 @@ public class menu extends AppCompatActivity {
         }
     }
 
-    // Método para abrir la Activity y pasar el código
-    private void openDetailActivity(String createCode) {
+    // Método para abrir la Activity Dificultad y pasar el código
+    private void openDificultadActivity(String createCode) {
         Intent intent = new Intent(menu.this, dificultad.class); // Crear el Intent
+
+        // Pasar el valor a la nueva Activity
+        intent.putExtra("CREATE_CODE", createCode); // Clave-valor para pasar datos
+
+        startActivity(intent);  // Lanzar la nueva Activity
+    }
+
+    // Método para abrir la Activity Selection y pasar el código
+    private void openSelectionActivity(String createCode) {
+        Intent intent = new Intent(menu.this, selection.class); // Crear el Intent
 
         // Pasar el valor a la nueva Activity
         intent.putExtra("CREATE_CODE", createCode); // Clave-valor para pasar datos

@@ -36,10 +36,6 @@ public class Client implements Runnable, Parcelable, Serializable {
         this.position = position;
     }
 
-    // Constructor sobrecargado que asigna valores por defecto
-    public Client(int port) {
-        this(port, "JugadorDefault", "Rojo", new Table("A", 1, "Normal"));
-    }
 
     // Constructor para Parcel (deserialización)
     protected Client(Parcel in) {
@@ -120,10 +116,12 @@ public class Client implements Runnable, Parcelable, Serializable {
     @Override
     public void run() {
         final String HOST = "127.0.0.1"; // Dirección IP del servidor (localhost)
-        try (Socket sc = new Socket(HOST, port);
-             ObjectInputStream ois = new ObjectInputStream(sc.getInputStream())) {
+        try {
+            Socket sc = new Socket(HOST, port);
+            ObjectInputStream ois = new ObjectInputStream(sc.getInputStream());
             // Bucle infinito para recibir actualizaciones del servidor
-            while (true) {
+            while (true)
+            {
                 Client jugador = (Client) ois.readObject();
                 support.firePropertyChange("jugador", null, jugador);
             }
