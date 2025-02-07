@@ -82,16 +82,16 @@ public class selection extends AppCompatActivity {
     }
 
     private void openDetailActivity(String playerName, String color) {
-        Intent intent = new Intent(this, Client.class); // Asegúrate de que sea ClientActivity
+        Intent intent = new Intent(this, tirar_dado.class);
 
-        // Crear un nuevo cliente con los datos introducidos
-        Client client = new Client(0, playerName, color, null); // Usamos un valor por defecto para el puerto y la posición
+        // Pasamos los datos al Intent
+        intent.putExtra("PLAYER_NAME", playerName);
+        intent.putExtra("PLAYER_COLOR", color);
 
-        // Pasamos el objeto Client a través de putExtra, utilizando la clave adecuada
-        intent.putExtra("CLIENT", (Serializable) client); // If client is Serializable
         // Iniciamos la actividad
         startActivity(intent);
     }
+
 
     @Override
     protected void onResume() {
