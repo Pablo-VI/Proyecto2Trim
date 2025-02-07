@@ -72,7 +72,11 @@ public class Server implements Runnable
             {
             
        // Recibir la posición actualizada del jugador
-                Client jugador = (Client) ois.readObject();
+                try {
+                    Client jugador = (Client) ois.readObject();
+                } catch (ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
 
 
                 // Enviar la actualización a todos los clients (excepto al que envió la actualización)
