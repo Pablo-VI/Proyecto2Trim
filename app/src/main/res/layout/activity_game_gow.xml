@@ -733,12 +733,12 @@
             android:layout_marginBottom="3dp"
             android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
-            android:rotation="90"
+            android:rotation="0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/tablerofin" />
+            app:srcCompat="@drawable/tablero_gow" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
