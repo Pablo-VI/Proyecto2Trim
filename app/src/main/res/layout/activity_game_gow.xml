@@ -20,8 +20,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/margen_inferior"
+    <androidx.constraintlayout.widget.ConstraintLayout  android:id="@+id/margen_inferior"
         android:layout_width="732dp"
         android:layout_height="62dp"
         android:layout_marginTop="349dp"
