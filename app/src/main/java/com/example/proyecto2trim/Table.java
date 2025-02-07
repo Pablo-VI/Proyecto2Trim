@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+import java.util.Random;
+
 public class Table implements Parcelable {
     private String row;
     private int position;
@@ -72,4 +74,22 @@ public class Table implements Parcelable {
         parcel.writeInt(position);
         parcel.writeString(typeBox);
     }
+
+    // Método para tirar el dado y mover al jugador
+    public int tirarDado() {
+        Random rand = new Random();
+        int resultadoDado = rand.nextInt(6) + 1;  // Genera un número aleatorio entre 1 y 6
+        setPosition(getPosition() + resultadoDado);  // Mueve al jugador en el tablero
+
+        // Verifica si el jugador ha pasado el final del tablero
+        if (getPosition() >= 35) {
+            setPosition(getPosition() % 35); // Restaura la posición si se pasa del final
+        }
+
+        // Devolver el resultado del dado para hacer algo con él en la UI (si es necesario)
+        return resultadoDado;
+    }
+
+
+
 }
