@@ -1,8 +1,11 @@
 package com.example.proyecto2trim;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +32,18 @@ public class menu_gow extends AppCompatActivity {
             return insets;
         });
 
+        // Inicializamos el ImageButton
+        ImageView cambiarActivityBtn1 = findViewById(R.id.create_button);
+
+        // Configuramos el listener del ImageButton
+        cambiarActivityBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cambiar a la segunda Activity
+                Intent intent = new Intent(menu_gow.this, dificultad_gow.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

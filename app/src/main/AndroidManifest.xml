@@ -1,89 +1,105 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <application android:allowBackup="true" android:dataExtractionRules="@xml/data_extraction_rules" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.Proyecto2ºTrim" tools:targetApi="31">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Proyecto2ºTrim"
+        tools:targetApi="31">
+        <activity
+            android:name=".game_gow"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".selection_gow"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".dificultad_gow"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".menu_gow"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".inicio_gow"
             android:exported="true"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".lobby"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".inicio"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
-            <!--  MENU INICIO  -->
+
+            <!-- MENU INICIO -->
         </activity>
         <activity
             android:name=".dificultad"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-        <!--  MODO Y DIFICULTAD  -->
+            tools:ignore="LockedOrientationActivity" /> <!-- MODO Y DIFICULTAD -->
         <activity
             android:name=".game"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-        <!--  JUEGO PRINCIPAL TABLERO  -->
+            tools:ignore="LockedOrientationActivity" /> <!-- JUEGO PRINCIPAL TABLERO -->
         <activity
             android:name=".tirar_dado"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-        <!--  TIRAR DADO  -->
+            tools:ignore="LockedOrientationActivity" /> <!-- TIRAR DADO -->
         <activity
             android:name=".selection"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-        <!--  NOMBRE Y COLOR  -->
+            tools:ignore="LockedOrientationActivity" /> <!-- NOMBRE Y COLOR -->
         <activity
             android:name=".menu"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-        <!--  CREAR Y UNIRSE PARTIDA  -->
+            tools:ignore="LockedOrientationActivity" /> <!-- CREAR Y UNIRSE PARTIDA -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
-            <!--  IDIOMA  -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
+            <!-- IDIOMA -->
+
         </activity>
         <activity
             android:name=".pregunta"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
-        <!--  PREGUNTA  -->
+            tools:ignore="LockedOrientationActivity" /> <!-- PREGUNTA -->
         <activity
             android:name=".resultado"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
     </application>
+
 </manifest>

@@ -1,10 +1,8 @@
 package com.example.proyecto2trim;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,44 +10,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class selection_gow extends AppCompatActivity {
+public class game_gow extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_selection_gow);
+        setContentView(R.layout.activity_game_gow);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-        // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn = findViewById(R.id.back);
-
-        // Configuramos el listener del ImageButton
-        cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Cambiar a la segunda Activity
-                Intent intent = new Intent(selection_gow.this, dificultad_gow.class);
-                startActivity(intent);
-            }
-        });
-
-        // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn1 = findViewById(R.id.play);
-
-        // Configuramos el listener del ImageButton
-        cambiarActivityBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Cambiar a la segunda Activity
-                Intent intent = new Intent(selection_gow.this, game_gow.class);
-                startActivity(intent);
-            }
         });
     }
 
