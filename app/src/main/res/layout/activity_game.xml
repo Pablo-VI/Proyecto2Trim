@@ -32,6 +32,7 @@
             app:srcCompat="@drawable/tablerofin" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/izquierda"
             android:layout_width="212dp"
             android:layout_height="408dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -356,6 +357,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/derecha"
             android:layout_width="212dp"
             android:layout_height="408dp"
             app:layout_constraintBottom_toBottomOf="parent"
