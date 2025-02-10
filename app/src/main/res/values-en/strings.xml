@@ -26,5 +26,6 @@
     <string name="tirar">Roll</string>
     <string name="jugadores">PLAYERS</string>
     <string name="hintMenu">XXXX</string>
-    <string name="toastCreateLobby">The game code must have 4 numbers.</string>
+    <string name="toastCreateLobby">Game code must have 4 numbers</string>
+    <string name="toastJoinLobby">Game code doesn´t exist</string>
 </resources>

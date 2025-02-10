@@ -71,6 +71,7 @@ public class Server implements Runnable
             while (true)
             {
             
+
        // Recibir la posición actualizada del jugador
                 try {
                     Client jugador = (Client) ois.readObject();

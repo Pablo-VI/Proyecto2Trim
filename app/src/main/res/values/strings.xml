@@ -26,6 +26,7 @@
     <string name="jugadores">JUGADORES</string>
     <string name="hintMenu">XXXX</string>
     <string name="toastCreateLobby">El código de la sala debe ser de 4 números</string>
+    <string name="toastJoinLobby">El código de la sala no existe</string>
 </resources>
 
 

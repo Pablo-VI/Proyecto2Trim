@@ -43,25 +43,46 @@ public class menu extends AppCompatActivity {
         Button Crear = binding.buttonCreate;
         Button Unir =  binding.buttonJoin;
 
-        // Obtener el valor del EditText y convertirlo a int de manera segura
-        String createCode = binding.numberCreate.getText().toString();
+        // Obtener el valor del EditText convertirlo a int de manera segura
+        String createCode = binding.numberCreate.getText().toString().trim();
         int createLobby = createCode.isEmpty() ? 0 : Integer.parseInt(createCode);
-
-        String joinCode = binding.numberCreate.getText().toString();
+        String joinCode = binding.numberCreate.getText().toString().trim();
         int joinLobby = joinCode.isEmpty() ? 0 : Integer.parseInt(joinCode);
 
-        if(!(createLobby == 4))
+
+        //Interacción con botón Crear partida
+        Crear.setOnClickListener(v -> {
+            if (!createCode.matches("\\d{4}"))
+            {
+                String toastMessage = getString(R.string.toastCreateLobby);
+                Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                // Llamar al método para abrir la Activity dificultad
+                openDetailActivity(createCode);
+            }
+        });
+
+        if (createLobby == joinLobby)
         {
-            String toastMessage = getString(R.string.toastCreateLobby);
+            openDetailActivity(createCode);
+        }
+        else
+        {
+            String toastMessage = getString(R.string.toastJoinLobby);
             Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
         }
+    }
 
-        // Configurar el listener para el clic del botón usando una expresión lambda
-        Crear.setOnClickListener(view -> {
-            // Crear un Intent para cambiar a la segunda Crear
-            Intent intent = new Intent(menu.this, dificultad.class);
-            startActivity(intent);
-        });
+    // Método para abrir la Activity y pasar el código
+    private void openDetailActivity(String createCode) {
+        Intent intent = new Intent(menu.this, dificultad.class); // Crear el Intent
+
+        // Pasar el valor a la nueva Activity
+        intent.putExtra("CREATE_CODE", createCode); // Clave-valor para pasar datos
+
+        startActivity(intent);  // Lanzar la nueva Activity
     }
 
     @Override

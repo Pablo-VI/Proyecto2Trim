@@ -20,28 +20,7 @@
             android:layout_height="70dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/text_chooseRow"
-                android:layout_width="228dp"
-                android:layout_height="29dp"
-                android:layout_marginStart="419dp"
-                android:layout_marginTop="21dp"
-                android:layout_marginEnd="84dp"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="#000000"
-                android:fontFamily="@font/irish_grover"
-                android:foregroundTint="#000000"
-                android:text="@string/eligeFila"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_dado"
@@ -122,102 +101,25 @@
                 android:layout_height="303dp"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="30dp"
+                android:rotation="90"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.08"
-                app:srcCompat="@drawable/tablero" />
+                app:srcCompat="@drawable/tablerofin" />
 
-            <ImageButton
-                android:id="@+id/boton_fila_1"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="#00FFFFFF"
-                android:rotation="61"
-                android:scaleType="center"
-                android:src="@drawable/flecha_fila"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.345"
+            <ImageView
+                android:id="@+id/jugadorDado"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/color_verde"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.245" />
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/boton_fila_2"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="#00FFFFFF"
-                android:rotation="120"
-                android:scaleType="center"
-                android:src="@drawable/flecha_fila"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.57"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.245" />
 
-            <ImageButton
-                android:id="@+id/boton_fila_3"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="#00FFFFFF"
-                android:rotation="180"
-                android:scaleType="center"
-                android:src="@drawable/flecha_fila"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.68"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.437" />
-
-            <ImageButton
-                android:id="@+id/boton_fila_4"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="#00FFFFFF"
-                android:rotation="240"
-                android:scaleType="center"
-                android:src="@drawable/flecha_fila"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.57"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.636" />
-
-            <ImageButton
-                android:id="@+id/boton_fila_5"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="#00FFFFFF"
-                android:rotation="300"
-                android:scaleType="center"
-                android:src="@drawable/flecha_fila"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.345"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.636" />
-
-            <ImageButton
-                android:id="@+id/boton_fila_6"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:backgroundTint="#00FFFFFF"
-                android:rotation="0"
-                android:scaleType="center"
-                android:src="@drawable/flecha_fila"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.241"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.437" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

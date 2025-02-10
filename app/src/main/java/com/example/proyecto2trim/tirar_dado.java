@@ -38,6 +38,18 @@ public class tirar_dado extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        // Obtener los datos del Intent
+        Intent intent = getIntent();
+        if (intent != null) {
+            String playerName = intent.getStringExtra("PLAYER_NAME");
+            String playerColor = intent.getStringExtra("PLAYER_COLOR");
+
+            if (playerName != null && playerColor != null) {
+                System.out.println("Nombre del jugador: " + playerName);
+                System.out.println("Color del jugador: " + playerColor);
+            }
+        }
+
         // Crear todas las casillas del tablero para el jugador
         //Inicializar todas las casillas del tablero
         Table [] main = new Table[35]; //35 casillas
@@ -83,23 +95,15 @@ public class tirar_dado extends AppCompatActivity {
         imageView = findViewById(R.id.dice); // Obtener la referencia al ImageView del dado
         generarNumeroBtn = findViewById(R.id.button_tirar); // Obtener la referencia al botón de lanzar
 
-        // Inicializar los botones que se mostrarán dinámicamente
-        ImageButton buttonRow1 = findViewById(R.id.boton_fila_1);
-        ImageButton buttonRow2 = findViewById(R.id.boton_fila_2);
-        ImageButton buttonRow3 = findViewById(R.id.boton_fila_3);
-        ImageButton buttonRow4 = findViewById(R.id.boton_fila_4);
-        ImageButton buttonRow5 = findViewById(R.id.boton_fila_5);
-        ImageButton buttonRow6 = findViewById(R.id.boton_fila_6);
-        TextView textChooseRow = findViewById(R.id.text_chooseRow);
+
   
         inicializarTablero();
 
         imageView = findViewById(R.id.dice);
         generarNumeroBtn = findViewById(R.id.button_tirar);
-        ocultarBotonesFilas();
 
         // Se crea el cliente usando el constructor que asigna valores por defecto
-        cliente = new Client(12345);
+        cliente = new Client(12345); // Asegúrate de que esto es lo que necesitas
         new Thread(cliente).start();
 
         // Se añade un listener para recibir actualizaciones desde el servidor
@@ -134,34 +138,34 @@ public class tirar_dado extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    private void ocultarBotonesFilas() {
-        int[] botonesFilas = {
-                R.id.boton_fila_1, R.id.boton_fila_2, R.id.boton_fila_3,
-                R.id.boton_fila_4, R.id.boton_fila_5, R.id.boton_fila_6
-        };
-        for (int botonId : botonesFilas) {
-            findViewById(botonId).setVisibility(View.GONE);
-        }
-        findViewById(R.id.text_chooseRow).setVisibility(View.GONE);
-    }
-
     private void tirarDado() {
         Random rand = new Random();
         int numeroAleatorio = rand.nextInt(6) + 1;
 
+        // Mover al jugador según el resultado del dado
+        int resultado = main[jugador.getPosition()].tirarDado();  // Aquí usamos el método tirarDado() de la clase Table
+
+        // Enviar el nuevo estado del jugador al servidor
         new Thread(() -> {
             try (Socket sc = new Socket("127.0.0.1", 12345);
                  ObjectOutputStream oos = new ObjectOutputStream(sc.getOutputStream())) {
-                // Se envía el objeto cliente (con sus datos actuales) al servidor
-                oos.writeObject(cliente);
+                // Actualizamos la posición del jugador y enviamos al servidor
+                jugador.setPosition(jugador.getPosition() + resultado);
+                oos.writeObject(jugador);
                 oos.flush();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }).start();
 
+
+        // Cambiar la imagen del dado según el resultado
         cambiarImagenDado(numeroAleatorio);
+
+        // Actualizar la interfaz con la nueva posición del jugador
+        actualizarInterfaz(jugador);
     }
+
 
     private void cambiarImagenDado(int numero) {
         int[] recursos = {
@@ -184,4 +188,18 @@ public class tirar_dado extends AppCompatActivity {
     private void inicializarTablero() {
         // Inicializar el tablero si es necesario
     }
+
+    private void actualizarInterfaz(Client jugador) {
+        // Cambiar la imagen del jugador en el tablero
+        // Suponiendo que tienes un ImageView que representa la ficha del jugador
+        ImageView fichaJugador = findViewById(R.id.jugadorDado);
+
+        // Cambiar la posición de la ficha en el tablero según la nueva posición del jugador
+        // Ejemplo simple: cambiar la imagen según el índice de la casilla
+        int nuevaPosicion = jugador.getPosition();
+
+        // Por ejemplo, cambia la imagen según la posición, o mueve el ImageView
+        fichaJugador.setImageResource(R.drawable.ficha_moving); // Imagen de la ficha
+    }
+
 }
