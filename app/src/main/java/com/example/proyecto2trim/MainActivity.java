@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyecto2trim.databinding.ActivityMainBinding;
-import com.example.proyecto2trim.databinding.ActivityTirarDadoBindingImpl;
 
 public class MainActivity extends AppCompatActivity {
 
