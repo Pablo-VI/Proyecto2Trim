@@ -1,6 +1,7 @@
 package com.example.proyecto2trim;
 
 import android.content.pm.ActivityInfo;
+import android.database.Observable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -53,5 +54,17 @@ public class game extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    public void update (Observable o, Object arg)
+    {
+        if (arg instanceof Client) {
+            Client jugador = (Client) arg;
+
+            runOnUiThread(() -> {
+                this.txtDiesel.setText(jugador.getDiesel() + "");
+                this.txtGasolinaPlomo.setText(jugador.getGasolinaPlomo() + "");
+                this.txtDieselOptima.setText(jugador.getDieselOptima() + "");
+            });
     }
 }
