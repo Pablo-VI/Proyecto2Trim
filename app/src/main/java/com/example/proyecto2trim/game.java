@@ -56,7 +56,7 @@ public class game extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    public void update (Observable o, Object arg)
+    /*public void update (Observable o, Object arg)
     {
         if (arg instanceof Client) {
             Client jugador = (Client) arg;
@@ -66,5 +66,5 @@ public class game extends AppCompatActivity {
                 this.txtGasolinaPlomo.setText(jugador.getGasolinaPlomo() + "");
                 this.txtDieselOptima.setText(jugador.getDieselOptima() + "");
             });
-    }
+    }*/
 }
