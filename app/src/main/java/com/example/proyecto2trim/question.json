@@ -2,312 +2,312 @@
   "questions": {
     "Historia": [
       {
-        "question": "¿Quién fue el primer presidente de los Estados Unidos?",
+        "pregunta": "¿Quién fue el primer presidente de los Estados Unidos?",
         "options": ["George Washington", "Abraham Lincoln", "Thomas Jefferson", "Franklin D. Roosevelt"],
         "answer": "George Washington"
       },
       {
-        "question": "¿En qué año terminó la Segunda Guerra Mundial?",
+        "pregunta": "¿En qué año terminó la Segunda Guerra Mundial?",
         "options": ["1940", "1945", "1950", "1939"],
         "answer": "1945"
       },
       {
-        "question": "¿Qué imperio construyó la Muralla China?",
+        "pregunta": "¿Qué imperio construyó la Muralla China?",
         "options": ["Imperio Romano", "Imperio Chino", "Imperio Persa", "Imperio Británico"],
         "answer": "Imperio Chino"
       },
       {
-        "question": "¿Qué evento ocurrió el 20 de julio de 1969?",
+        "pregunta": "¿Qué evento ocurrió el 20 de julio de 1969?",
         "options": ["La caída del muro de Berlín", "La llegada del hombre a la luna", "El fin de la Guerra Fría", "La independencia de India"],
         "answer": "La llegada del hombre a la luna"
       },
       {
-        "question": "¿Quién fue el líder de la Revolución Francesa?",
+        "pregunta": "¿Quién fue el líder de la Revolución Francesa?",
         "options": ["Napoleón Bonaparte", "Maximilien Robespierre", "Luis XVI", "Jules Ferry"],
         "answer": "Maximilien Robespierre"
       },
       {
-        "question": "¿En qué siglo ocurrió la Revolución Industrial?",
+        "pregunta": "¿En qué siglo ocurrió la Revolución Industrial?",
         "options": ["Siglo XVI", "Siglo XVIII", "Siglo XIX", "Siglo XX"],
         "answer": "Siglo XIX"
       },
       {
-        "question": "¿Qué imperio fue conocido por su vasto dominio en Europa y Asia?",
+        "pregunta": "¿Qué imperio fue conocido por su vasto dominio en Europa y Asia?",
         "options": ["Imperio Romano", "Imperio Otomano", "Imperio Mongol", "Imperio Británico"],
         "answer": "Imperio Mongol"
       },
       {
-        "question": "¿Qué país fue el primero en abolir la esclavitud?",
+        "pregunta": "¿Qué país fue el primero en abolir la esclavitud?",
         "options": ["Francia", "Inglaterra", "Estados Unidos", "Haití"],
         "answer": "Haití"
       },
       {
-        "question": "¿Quién descubrió América en 1492?",
+        "pregunta": "¿Quién descubrió América en 1492?",
         "options": ["Cristóbal Colón", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"],
         "answer": "Cristóbal Colón"
       },
       {
-        "question": "¿Cuál fue la principal causa de la Primera Guerra Mundial?",
+        "pregunta": "¿Cuál fue la principal causa de la Primera Guerra Mundial?",
         "options": ["La invasión de Polonia", "La alianza entre naciones", "El asesinato del archiduque Francisco Fernando", "La carrera espacial"],
         "answer": "El asesinato del archiduque Francisco Fernando"
       }
     ],
     "Geografía": [
       {
-        "question": "¿Cuál es el río más largo del mundo?",
+        "pregunta": "¿Cuál es el río más largo del mundo?",
         "options": ["Río Amazonas", "Río Nilo", "Río Yangtsé", "Río Misisipi"],
         "answer": "Río Amazonas"
       },
       {
-        "question": "¿En qué continente se encuentra el desierto de Sahara?",
+        "pregunta": "¿En qué continente se encuentra el desierto de Sahara?",
         "options": ["Asia", "África", "América", "Oceanía"],
         "answer": "África"
       },
       {
-        "question": "¿Cuál es la capital de Japón?",
+        "pregunta": "¿Cuál es la capital de Japón?",
         "options": ["Pekín", "Seúl", "Tokio", "Bangkok"],
         "answer": "Tokio"
       },
       {
-        "question": "¿Qué país tiene la mayor población del mundo?",
+        "pregunta": "¿Qué país tiene la mayor población del mundo?",
         "options": ["India", "China", "Estados Unidos", "Rusia"],
         "answer": "China"
       },
       {
-        "question": "¿Qué océano está entre África y América?",
+        "pregunta": "¿Qué océano está entre África y América?",
         "options": ["Océano Pacífico", "Océano Índico", "Océano Atlántico", "Océano Ártico"],
         "answer": "Océano Atlántico"
       },
       {
-        "question": "¿Cuál es la montaña más alta del mundo?",
+        "pregunta": "¿Cuál es la montaña más alta del mundo?",
         "options": ["K2", "Monte Everest", "Mont Blanc", "Aconcagua"],
         "answer": "Monte Everest"
       },
       {
-        "question": "¿En qué continente se encuentra el país de Australia?",
+        "pregunta": "¿En qué continente se encuentra el país de Australia?",
         "options": ["Asia", "África", "Europa", "Oceanía"],
         "answer": "Oceanía"
       },
       {
-        "question": "¿Qué país tiene más islas en el mundo?",
+        "pregunta": "¿Qué país tiene más islas en el mundo?",
         "options": ["Suecia", "Australia", "Canadá", "Indonesia"],
         "answer": "Suecia"
       },
       {
-        "question": "¿Qué país es conocido por la Torre Eiffel?",
+        "pregunta": "¿Qué país es conocido por la Torre Eiffel?",
         "options": ["Italia", "España", "Francia", "Alemania"],
         "answer": "Francia"
       },
       {
-        "question": "¿Cuál es el continente más grande?",
+        "pregunta": "¿Cuál es el continente más grande?",
         "options": ["Asia", "América", "África", "Europa"],
         "answer": "Asia"
       }
     ],
     "Arte y Literatura": [
       {
-        "question": "¿Quién escribió 'Don Quijote de la Mancha'?",
+        "pregunta": "¿Quién escribió 'Don Quijote de la Mancha'?",
         "options": ["Miguel de Cervantes", "Gabriel García Márquez", "Pablo Neruda", "Mario Vargas Llosa"],
         "answer": "Miguel de Cervantes"
       },
       {
-        "question": "¿En qué siglo pintó Leonardo da Vinci la 'Mona Lisa'?",
+        "pregunta": "¿En qué siglo pintó Leonardo da Vinci la 'Mona Lisa'?",
         "options": ["Siglo XV", "Siglo XVI", "Siglo XVII", "Siglo XVIII"],
         "answer": "Siglo XVI"
       },
       {
-        "question": "¿Qué famoso pintor cortó su oreja?",
+        "pregunta": "¿Qué famoso pintor cortó su oreja?",
         "options": ["Pablo Picasso", "Salvador Dalí", "Vincent van Gogh", "Claude Monet"],
         "answer": "Vincent van Gogh"
       },
       {
-        "question": "¿Quién escribió 'Cien años de soledad'?",
+        "pregunta": "¿Quién escribió 'Cien años de soledad'?",
         "options": ["Jorge Luis Borges", "Mario Vargas Llosa", "Gabriel García Márquez", "Julio Cortázar"],
         "answer": "Gabriel García Márquez"
       },
       {
-        "question": "¿En qué ciudad se encuentra el Museo del Prado?",
+        "pregunta": "¿En qué ciudad se encuentra el Museo del Prado?",
         "options": ["Madrid", "Roma", "Londres", "París"],
         "answer": "Madrid"
       },
       {
-        "question": "¿Quién pintó 'La última cena'?",
+        "pregunta": "¿Quién pintó 'La última cena'?",
         "options": ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
         "answer": "Leonardo da Vinci"
       },
       {
-        "question": "¿Qué autor escribió 'Romeo y Julieta'?",
+        "pregunta": "¿Qué autor escribió 'Romeo y Julieta'?",
         "options": ["William Shakespeare", "Charles Dickens", "Jane Austen", "Homer"],
         "answer": "William Shakespeare"
       },
       {
-        "question": "¿Qué movimiento artístico es Salvador Dalí conocido por?",
+        "pregunta": "¿Qué movimiento artístico es Salvador Dalí conocido por?",
         "options": ["Cubismo", "Surrealismo", "Impresionismo", "Renacimiento"],
         "answer": "Surrealismo"
       },
       {
-        "question": "¿Qué obra literaria es conocida como 'La Odisea'?",
+        "pregunta": "¿Qué obra literaria es conocida como 'La Odisea'?",
         "options": ["Un poema épico griego", "Una novela rusa", "Una obra de Shakespeare", "Una obra romana"],
         "answer": "Un poema épico griego"
       },
       {
-        "question": "¿En qué país nació el escritor Gabriel García Márquez?",
+        "pregunta": "¿En qué país nació el escritor Gabriel García Márquez?",
         "options": ["México", "Colombia", "Argentina", "Perú"],
         "answer": "Colombia"
       }
     ],
     "Ciencias y Naturaleza": [
       {
-        "question": "¿Qué es el ADN?",
+        "pregunta": "¿Qué es el ADN?",
         "options": ["Ácido desoxirribonucleico", "Ácido ribonucleico", "Proteína", "Mineral"],
         "answer": "Ácido desoxirribonucleico"
       },
       {
-        "question": "¿Cuántos planetas hay en nuestro sistema solar?",
+        "pregunta": "¿Cuántos planetas hay en nuestro sistema solar?",
         "options": ["7", "8", "9", "10"],
         "answer": "8"
       },
       {
-        "question": "¿Qué gas componen en su mayoría los pulmones humanos?",
+        "pregunta": "¿Qué gas componen en su mayoría los pulmones humanos?",
         "options": ["Oxígeno", "Nitrógeno", "Dióxido de carbono", "Hidrógeno"],
         "answer": "Oxígeno"
       },
       {
-        "question": "¿Qué parte del cuerpo produce insulina?",
+        "pregunta": "¿Qué parte del cuerpo produce insulina?",
         "options": ["Hígado", "Corazón", "Páncreas", "Riñones"],
         "answer": "Páncreas"
       },
       {
-        "question": "¿Cómo se llama el proceso por el cual las plantas producen su propio alimento?",
+        "pregunta": "¿Cómo se llama el proceso por el cual las plantas producen su propio alimento?",
         "options": ["Fotosíntesis", "Respiración", "Digestión", "Fermentación"],
         "answer": "Fotosíntesis"
       },
       {
-        "question": "¿Qué es un volcán?",
+        "pregunta": "¿Qué es un volcán?",
         "options": ["Un tipo de montaña", "Una formación terrestre", "Un agujero en la Tierra", "Una explosión del sol"],
         "answer": "Una formación terrestre"
       },
       {
-        "question": "¿Qué animal es conocido por su capacidad de volar?",
+        "pregunta": "¿Qué animal es conocido por su capacidad de volar?",
         "options": ["Murciélago", "Perro", "Canguro", "Ballena"],
         "answer": "Murciélago"
       },
       {
-        "question": "¿Cuántos huesos tiene el cuerpo humano adulto?",
+        "pregunta": "¿Cuántos huesos tiene el cuerpo humano adulto?",
         "options": ["206", "220", "195", "180"],
         "answer": "206"
       },
       {
-        "question": "¿Cuál es el órgano más grande del cuerpo humano?",
+        "pregunta": "¿Cuál es el órgano más grande del cuerpo humano?",
         "options": ["Hígado", "Piel", "Corazón", "Pulmones"],
         "answer": "Piel"
       },
       {
-        "question": "¿Qué tipo de animal es un delfín?",
+        "pregunta": "¿Qué tipo de animal es un delfín?",
         "options": ["Reptil", "Mamífero", "Peces", "Anfibio"],
         "answer": "Mamífero"
       }
     ],
     "Deportes y Pasatiempos": [
       {
-        "question": "¿Cuántos jugadores hay en un equipo de fútbol?",
+        "pregunta": "¿Cuántos jugadores hay en un equipo de fútbol?",
         "options": ["9", "10", "11", "12"],
         "answer": "11"
       },
       {
-        "question": "¿En qué deporte se utiliza una raqueta?",
+        "pregunta": "¿En qué deporte se utiliza una raqueta?",
         "options": ["Fútbol", "Béisbol", "Tenis", "Básquetbol"],
         "answer": "Tenis"
       },
       {
-        "question": "¿Cuál es el deporte más popular en el mundo?",
+        "pregunta": "¿Cuál es el deporte más popular en el mundo?",
         "options": ["Béisbol", "Fútbol", "Baloncesto", "Tenis"],
         "answer": "Fútbol"
       },
       {
-        "question": "¿Qué país ganó la Copa del Mundo 2018?",
+        "pregunta": "¿Qué país ganó la Copa del Mundo 2018?",
         "options": ["Alemania", "Francia", "Brasil", "Argentina"],
         "answer": "Francia"
       },
       {
-        "question": "¿En qué deporte se utiliza un puck?",
+        "pregunta": "¿En qué deporte se utiliza un puck?",
         "options": ["Básquetbol", "Hockey sobre hielo", "Fútbol", "Tenis"],
         "answer": "Hockey sobre hielo"
       },
       {
-        "question": "¿Qué deporte es conocido como 'el rey de los deportes'?",
+        "pregunta": "¿Qué deporte es conocido como 'el rey de los deportes'?",
         "options": ["Fútbol", "Béisbol", "Tenis", "Rugby"],
         "answer": "Fútbol"
       },
       {
-        "question": "¿Qué actividad se considera un deporte extremo?",
+        "pregunta": "¿Qué actividad se considera un deporte extremo?",
         "options": ["Natación", "Escalada", "Fútbol", "Béisbol"],
         "answer": "Escalada"
       },
       {
-        "question": "¿Quién es conocido como el 'Rey del tenis'?",
+        "pregunta": "¿Quién es conocido como el 'Rey del tenis'?",
         "options": ["Roger Federer", "Rafael Nadal", "Serena Williams", "Novak Djokovic"],
         "answer": "Rafael Nadal"
       },
       {
-        "question": "¿Qué país es conocido por su equipo de baloncesto 'Los Angeles Lakers'?",
+        "pregunta": "¿Qué país es conocido por su equipo de baloncesto 'Los Angeles Lakers'?",
         "options": ["México", "España", "Argentina", "Estados Unidos"],
         "answer": "Estados Unidos"
       },
       {
-        "question": "¿Cuál es el objetivo principal en el cricket?",
+        "pregunta": "¿Cuál es el objetivo principal en el cricket?",
         "options": ["Anotar goles", "Lanzar pelotas", "Hacer puntos corriendo", "Ganar partidos"],
         "answer": "Anotar goles"
       }
     ],
     "Entretenimiento": [
       {
-        "question": "¿Quién interpretó al Joker en 'El Caballero Oscuro'?",
+        "pregunta": "¿Quién interpretó al Joker en 'El Caballero Oscuro'?",
         "options": ["Christian Bale", "Heath Ledger", "Joaquin Phoenix", "Michael Keaton"],
         "answer": "Heath Ledger"
       },
       {
-        "question": "¿Qué serie tiene a un personaje llamado 'Daenerys Targaryen'?",
+        "pregunta": "¿Qué serie tiene a un personaje llamado 'Daenerys Targaryen'?",
         "options": ["Breaking Bad", "Game of Thrones", "Stranger Things", "The Witcher"],
         "answer": "Game of Thrones"
       },
       {
-        "question": "¿En qué año se estrenó 'Titanic'?",
+        "pregunta": "¿En qué año se estrenó 'Titanic'?",
         "options": ["1997", "1995", "2000", "1999"],
         "answer": "1997"
       },
       {
-        "question": "¿Qué película de Disney presenta a un muñeco de nieve llamado Olaf?",
+        "pregunta": "¿Qué película de Disney presenta a un muñeco de nieve llamado Olaf?",
         "options": ["Frozen", "La Sirenita", "Aladino", "Cenicienta"],
         "answer": "Frozen"
       },
       {
-        "question": "¿Quién cantó la canción 'Thriller'?",
+        "pregunta": "¿Quién cantó la canción 'Thriller'?",
         "options": ["Prince", "Michael Jackson", "Elvis Presley", "Whitney Houston"],
         "answer": "Michael Jackson"
       },
       {
-        "question": "¿Qué personaje es conocido por su capa roja y su habilidad para volar?",
+        "pregunta": "¿Qué personaje es conocido por su capa roja y su habilidad para volar?",
         "options": ["Superman", "Spiderman", "Iron Man", "Thor"],
         "answer": "Superman"
       },
       {
-        "question": "¿Cuál es la película más taquillera de todos los tiempos?",
+        "pregunta": "¿Cuál es la película más taquillera de todos los tiempos?",
         "options": ["Avatar", "Avengers: Endgame", "Titanic", "Star Wars: El despertar de la fuerza"],
         "answer": "Avengers: Endgame"
       },
       {
-        "question": "¿Qué videojuego tiene personajes como Mario y Luigi?",
+        "pregunta": "¿Qué videojuego tiene personajes como Mario y Luigi?",
         "options": ["Pokémon", "Minecraft", "Super Mario", "Zelda"],
         "answer": "Super Mario"
       },
       {
-        "question": "¿Qué programa de televisión está presentado por Ellen DeGeneres?",
+        "pregunta": "¿Qué programa de televisión está presentado por Ellen DeGeneres?",
         "options": ["The Tonight Show", "Ellen's Game of Games", "Ellen DeGeneres Show", "Late Late Show"],
         "answer": "Ellen DeGeneres Show"
       },
       {
-        "question": "¿Qué saga de películas trata sobre una competencia por la supervivencia llamada 'Los Juegos del Hambre'?",
+        "pregunta": "¿Qué saga de películas trata sobre una competencia por la supervivencia llamada 'Los Juegos del Hambre'?",
         "options": ["Harry Potter", "Los Juegos del Hambre", "Crepúsculo", "Divergente"],
         "answer": "Los Juegos del Hambre"
       }

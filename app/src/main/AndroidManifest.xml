@@ -13,6 +13,16 @@
         android:theme="@style/Theme.Proyecto2ºTrim"
         tools:targetApi="31">
         <activity
+            android:name=".pregunta_gow"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".tirar_dado_gow"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".idioma_gow"
             android:exported="false"
             android:screenOrientation="landscape"
@@ -93,7 +103,6 @@
             tools:ignore="LockedOrientationActivity">
 
             <!-- IDIOMA -->
-
         </activity>
         <activity
             android:name=".pregunta"
