@@ -12,7 +12,7 @@ public class Table implements Parcelable {
     private String typeBox;
 
 
-    public Table(String row, int position, String typeBox) {
+    public Table(int position, String typeBox) {
         this.position = position;
         this.typeBox = typeBox;
     }
