@@ -47,7 +47,7 @@ public class inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
-                Intent intent = new Intent(inicio.this, tirar_dado.class);
+                Intent intent = new Intent(inicio.this, resultado.class);
                 startActivity(intent);
             }
         });

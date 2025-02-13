@@ -11,50 +11,66 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondo"
-        tools:context=".inicio">
+        tools:context=".inicio"
+        android:background="@drawable/fondo_main_gow">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="548dp"
-            android:layout_height="330dp"
-            android:layout_marginStart="91dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="92dp"
-            android:layout_marginBottom="41dp"
+            android:id="@+id/margen_superior"
+            android:layout_width="732dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="349dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/logo"
-                android:layout_width="425dp"
-                android:layout_height="240dp"
-                android:layout_marginStart="62dp"
-                android:layout_marginEnd="61dp"
-                android:layout_marginBottom="90dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/prototipo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/margen_inferior"
+            android:layout_width="732dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="349dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/izquierda"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="497dp"
+            android:layout_marginBottom="43dp"
+            app:layout_constraintBottom_toTopOf="@+id/margen_inferior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/margen_superior">
 
             <ImageButton
                 android:id="@+id/play"
-                android:layout_width="72dp"
-                android:layout_height="76dp"
-                android:layout_marginStart="238dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="238dp"
-                android:layout_marginBottom="6dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="160dp"
+                android:layout_marginEnd="50dp"
                 android:backgroundTint="#00FFFFFF"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logo"
-                app:srcCompat="@drawable/play" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/jugar_gow" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

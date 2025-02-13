@@ -48,7 +48,12 @@
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".inicio_gow"
+            android:name=".lobby"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".inicio"
             android:exported="true"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
@@ -57,18 +62,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".lobby"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".inicio"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity">
-
             <!-- MENU INICIO -->
         </activity>
         <activity
@@ -97,7 +90,7 @@
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" /> <!-- CREAR Y UNIRSE PARTIDA -->
         <activity
-            android:name=".MainActivity"
+            android:name=".idioma"
             android:exported="true"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">

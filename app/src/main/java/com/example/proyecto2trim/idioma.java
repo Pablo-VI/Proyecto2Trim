@@ -5,19 +5,21 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyecto2trim.databinding.ActivityMainBinding;
-import com.example.proyecto2trim.databinding.ActivityTirarDadoBindingImpl;
+import com.example.proyecto2trim.databinding.ActivityIdiomaBinding;
 
-public class MainActivity extends AppCompatActivity {
+
+public class idioma extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        ActivityIdiomaBinding binding = ActivityIdiomaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Forzar orientación horizontal
@@ -36,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn = findViewById(R.id.button_Spanish);
+        ImageView cambiarActivityBtn = findViewById(R.id.espana);
 
         // Configuramos el listener del ImageButton
         cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
-                Intent intent = new Intent(MainActivity.this, menu.class);
+                Intent intent = new Intent(idioma.this, menu.class);
                 startActivity(intent);
             }
         });
