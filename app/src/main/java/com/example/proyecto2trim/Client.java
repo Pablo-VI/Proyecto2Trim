@@ -4,18 +4,16 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.net.Socket;
 
 public class Client implements Runnable, Parcelable, Serializable {
     private static final long serialVersionUID = 1L;
 
-    private int port; // Puerto para conectarse al servidor
-    private transient PropertyChangeSupport support; // Soporte para notificar cambios a los observadores (no serializable)
+    private boolean fin;
     private String name;
     private String color;
     private Table position; // La casilla donde está el jugador
@@ -23,17 +21,16 @@ public class Client implements Runnable, Parcelable, Serializable {
     /**
      * Constructor para inicializar el cliente.
      *
-     * @param port El puerto en el que el servidor está escuchando.
      * @param name El nombre del jugador.
      * @param color El color del jugador.
      * @param position La posición en la tabla del jugador.
      */
-    public Client(int port, String name, String color, Table position) {
-        this.port = port;
-        this.support = new PropertyChangeSupport(this);
+    public Client(String name, String color, Table position)
+    {
         this.name = name;
         this.color = color;
         this.position = position;
+        this.fin = false;
     }
 
 
@@ -42,7 +39,6 @@ public class Client implements Runnable, Parcelable, Serializable {
         name = in.readString();
         color = in.readString();
         position = in.readParcelable(Table.class.getClassLoader()); // Leer Table como Parcelable
-        support = new PropertyChangeSupport(this);
     }
 
     // Crear un objeto Client desde un Parcel
@@ -101,23 +97,98 @@ public class Client implements Runnable, Parcelable, Serializable {
         parcel.writeParcelable(position, flags);
     }
 
-    /**
-     * Método para agregar un observador (listener) que escuchará los cambios.
-     *
-     * @param listener El observador que se agregará.
-     */
-    public void addObserver(PropertyChangeListener listener) {
-        support.addPropertyChangeListener(listener);
+    @Override
+    public void run()
+    {
+        try
+        {
+            // Conexión al servidor (en el localhost y puerto 5555)
+            Socket socket = new Socket(InetAddress.getLocalHost(), 5555);
+            System.out.println("[" + name + "] Conectado al servidor en puerto local: " + socket.getLocalPort());
+
+            DataInputStream in = new DataInputStream(socket.getInputStream());
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+
+            // 1) Enviar el nombre del jugador al servidor
+            out.writeUTF(name);
+            out.flush();
+
+            // 2) Recibir confirmación de aceptación
+            String respuesta = in.readUTF();
+            if ("aceptado".equals(respuesta)) {
+                System.out.println("[" + name + "] El servidor me ha aceptado en la carrera.");
+            }
+
+            // 3) Recibir la lista de jugadores
+            String listaJugadores = in.readUTF();
+            System.out.println("[" + name + "] Lista de jugadores: " + listaJugadores);
+
+            // Se muestra la ventana gráfica de la carrera
+            ventana = new ClienteVentanaCarrera(name);
+            ventana.setNombresJinetes(listaJugadores);
+            ventana.setVisible(true);
+
+            // 4) Bucle principal de comunicación con el servidor
+            while (!fin)
+            {
+                // Se lee el primer entero enviado por el servidor
+                int codigo = in.readInt();
+
+                if (codigo == -2)
+                {
+                    // Código -2: El servidor indica "¡Es tu turno, lanza el dado!"
+                    System.out.println("[" + name + "] Es mi turno. Lanza el dado.");
+                    // Se espera la tirada en la ventana (método bloqueante)
+                    //HAcer codigo para llamar a tirar_dado.java y pasar los datos de la tirada
+                    int dado = game.esperarTirada();
+                    // Se envía el valor del dado al servidor
+                    out.writeInt(dado);
+                    out.flush();
+                }
+                else if (codigo == 0 || codigo > 0)
+                {
+                    // En este caso se reciben los avances de los jugadores.
+                    // El servidor envía 4 enteros que representan los avances,
+                    // y luego un código de control (0 = carrera en curso).
+                    int[] avances = new int[4];
+                    avances[0] = codigo; // El primer valor ya leído
+                    avances[1] = in.readInt();
+                    avances[2] = in.readInt();
+                    avances[3] = in.readInt();
+                    int control = in.readInt(); // control = 0
+                    // Se actualiza la interfaz gráfica con los avances
+                    ventana.avance(avances);
+                }
+                else if (codigo == -1)
+                {
+                    // Código -1: Fin de la carrera.
+                    // Se reciben las posiciones finales de los camellos.
+                    int[] posiciones = new int[4];
+                    posiciones[0] = in.readInt();
+                    posiciones[1] = in.readInt();
+                    posiciones[2] = in.readInt();
+                    posiciones[3] = in.readInt();
+                    ventana.setPosicionesFinales(posiciones);
+                    fin = true;
+                }
+            }
+
+            socket.close();
+            System.out.println("[" + name + "] Cliente finalizado.");
+
+        } catch (Exception e) {
+            System.out.println("Error en cliente " + name + ": " + e);
+        }
     }
 
     /**
      * Método para iniciar la conexión al servidor.
-     */
+
     @Override
     public void run() {
         final String HOST = "127.0.0.1"; // Dirección IP del servidor (localhost)
         try {
-            Socket sc = new Socket(HOST, port);
+            Socket sc = new Socket(HOST, 5555);
             ObjectInputStream ois = new ObjectInputStream(sc.getInputStream());
             // Bucle infinito para recibir actualizaciones del servidor
             while (true)
@@ -128,5 +199,5 @@ public class Client implements Runnable, Parcelable, Serializable {
         } catch (IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 }
