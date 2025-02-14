@@ -8,20 +8,17 @@ import androidx.annotation.NonNull;
 import java.util.Random;
 
 public class Table implements Parcelable {
-    private String row;
     private int position;
     private String typeBox;
 
 
-    public Table(String row, int position, String typeBox) {
-        this.row = row;
+    public Table(int position, String typeBox) {
         this.position = position;
         this.typeBox = typeBox;
     }
 
     //Serialización
     protected Table(Parcel in) {
-        row = in.readString();
         position = in.readInt();
         typeBox = in.readString();
     }
@@ -38,9 +35,6 @@ public class Table implements Parcelable {
         }
     };
 
-    public String getRow() {
-        return row;
-    }
 
     public int getPosition() {
         return position;
@@ -49,10 +43,6 @@ public class Table implements Parcelable {
     public String getTypeBox()
     {
         return typeBox;
-    }
-
-    public void setRow(String row) {
-        this.row = row;
     }
 
     public void setPosition(int position) {
@@ -70,7 +60,6 @@ public class Table implements Parcelable {
     }
 
     public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeString(row);
         parcel.writeInt(position);
         parcel.writeString(typeBox);
     }
