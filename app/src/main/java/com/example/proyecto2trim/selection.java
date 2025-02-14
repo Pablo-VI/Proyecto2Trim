@@ -21,9 +21,12 @@ public class selection extends AppCompatActivity {
         ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+<<<<<<< HEAD
         // Obtener el nombre del jugador
         playerName = binding.escribetunombre.getText().toString();
 
+=======
+>>>>>>> 20af1a3e4d90d477ba1925a1ffcad935b929b789
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -65,7 +68,6 @@ public class selection extends AppCompatActivity {
             // Aquí puedes usar la variable `color` como necesites
             // Por ejemplo, mostrarla en un Log o usarla en otra parte de tu aplicación
             System.out.println("Color seleccionado: " + color);
-            System.out.println("Nombre introducido: " + playerName);
         });
 
         // Configurar el botón de "check" para capturar los datos y abrir la siguiente actividad
@@ -81,17 +83,17 @@ public class selection extends AppCompatActivity {
                 // Mostrar un mensaje de error si faltan datos
                 System.out.println("Por favor, selecciona nombre y color.");
             }
+            System.out.println("Nombre introducido: " + playerName);
         });
     }
 
     private void openDetailActivity(String playerName, String color) {
-        Intent intent = new Intent(this, Client.class); // Asegúrate de que sea ClientActivity
+        Intent intent = new Intent(this, tirar_dado.class);
 
-        // Crear un nuevo cliente con los datos introducidos
-        Client client = new Client(0, playerName, color, null); // Usamos un valor por defecto para el puerto y la posición
+        // Pasamos los datos al Intent
+        intent.putExtra("PLAYER_NAME", playerName);
+        intent.putExtra("PLAYER_COLOR", color);
 
-        // Pasamos el objeto Client a través de putExtra, utilizando la clave adecuada
-        intent.putExtra("CLIENT", (Serializable) client); // If client is Serializable
         // Iniciamos la actividad
         startActivity(intent);
     }
@@ -106,5 +108,13 @@ public class selection extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 }

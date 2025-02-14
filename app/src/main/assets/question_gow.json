@@ -1,0 +1,417 @@
+{
+  "questions": {
+    "Kratos": [
+      {
+        "pregunta": "¿Cuál es el apellido de Kratos?",
+        "opciones": [
+          "A) Agrios",
+          "B) Spartan",
+          "C) Mjolnir",
+          "D) Godslayer"
+        ],
+        "correcta": "B) Spartan"
+      },
+      {
+        "pregunta": "¿Cómo se llama la esposa de Kratos?",
+        "opciones": [
+          "A) Freya",
+          "B) Faye",
+          "C) Sif",
+          "D) Althea"
+        ],
+        "correcta": "B) Faye"
+      },
+      {
+        "pregunta": "¿Qué arma usa Kratos en 'God of War' (2018)?",
+        "opciones": [
+          "A) La lanza de Odín",
+          "B) Hacha Leviatán",
+          "C) Espadas del caos",
+          "D) Martillo de Thor"
+        ],
+        "correcta": "B) Hacha Leviatán"
+      },
+      {
+        "pregunta": "¿De qué ciudad es originario Kratos?",
+        "opciones": [
+          "A) Atenas",
+          "B) Esparta",
+          "C) Roma",
+          "D) Asgard"
+        ],
+        "correcta": "B) Esparta"
+      },
+      {
+        "pregunta": "¿Qué dios de la guerra era Kratos antes de perder su humanidad?",
+        "opciones": [
+          "A) Ares",
+          "B) Zeus",
+          "C) Hades",
+          "D) Thor"
+        ],
+        "correcta": "A) Ares"
+      },
+      {
+        "pregunta": "¿Qué le pasó a Kratos en el final de 'God of War 3'?",
+        "opciones": [
+          "A) Muere en batalla",
+          "B) Se convierte en dios",
+          "C) Sobrevive y se aleja de los dioses",
+          "D) Destruye el Olimpo"
+        ],
+        "correcta": "C) Sobrevive y se aleja de los dioses"
+      },
+      {
+        "pregunta": "¿Quién fue el primer dios que Kratos mató?",
+        "opciones": [
+          "A) Ares",
+          "B) Poseidón",
+          "C) Hermes",
+          "D) Hades"
+        ],
+        "correcta": "A) Ares"
+      },
+      {
+        "pregunta": "¿Cuál es la relación de Kratos con Atreus?",
+        "opciones": [
+          "A) Son hermanos",
+          "B) Son padre e hijo",
+          "C) Son amigos",
+          "D) Son dioses hermanos"
+        ],
+        "correcta": "B) Son padre e hijo"
+      },
+      {
+        "pregunta": "¿Cómo se llama el padre de Kratos?",
+        "opciones": [
+          "A) Zeus",
+          "B) Cronos",
+          "C) Poseidón",
+          "D) Ares"
+        ],
+        "correcta": "B) Cronos"
+      },
+      {
+        "pregunta": "¿En qué región se encuentran Kratos y Atreus al inicio de 'God of War' (2018)?",
+        "opciones": [
+          "A) Asgard",
+          "B) Midgard",
+          "C) Vanaheim",
+          "D) Jotunheim"
+        ],
+        "correcta": "B) Midgard"
+      }
+    ],
+    "Atreus": [
+      {
+        "pregunta": "¿Quién es la madre de Atreus?",
+        "opciones": [
+          "A) Freya",
+          "B) Faye",
+          "C) Sif",
+          "D) Frigg"
+        ],
+        "correcta": "B) Faye"
+      },
+      {
+        "pregunta": "¿Qué nombre secreto tiene Atreus, revelado al final de 'God of War' (2018)?",
+        "opciones": [
+          "A) Loki",
+          "B) Thor",
+          "C) Tyr",
+          "D) Odín"
+        ],
+        "correcta": "A) Loki"
+      },
+      {
+        "pregunta": "¿Cómo se llama el animal que Atreus monta en 'God of War' (2018)?",
+        "opciones": [
+          "A) El dragón Fafnir",
+          "B) La loba Sköll",
+          "C) El venado",
+          "D) El lobo Fenrir"
+        ],
+        "correcta": "C) El venado"
+      },
+      {
+        "pregunta": "¿Quién entrena a Atreus en el uso de arco?",
+        "opciones": [
+          "A) Thor",
+          "B) Kratos",
+          "C) Freya",
+          "D) Heimdall"
+        ],
+        "correcta": "B) Kratos"
+      },
+      {
+        "pregunta": "¿Qué habilidad especial tiene Atreus con los enemigos?",
+        "opciones": [
+          "A) Puede invocar a los dioses",
+          "B) Puede curar a Kratos",
+          "C) Puede controlar animales",
+          "D) Puede comunicarse con las runas"
+        ],
+        "correcta": "D) Puede comunicarse con las runas"
+      },
+      {
+        "pregunta": "¿Qué enfermedad oculta tiene Atreus?",
+        "opciones": [
+          "A) Veneno",
+          "B) El mal de los dioses",
+          "C) Una maldición",
+          "D) No tiene ninguna enfermedad"
+        ],
+        "correcta": "D) No tiene ninguna enfermedad"
+      },
+      {
+        "pregunta": "¿Qué habilidad de Atreus es clave para resolver acertijos en 'God of War' (2018)?",
+        "opciones": [
+          "A) Fuerza sobrehumana",
+          "B) Control de los vientos",
+          "C) Uso de runas",
+          "D) Invocar tormentas"
+        ],
+        "correcta": "C) Uso de runas"
+      },
+      {
+        "pregunta": "¿Cómo se llama la relación de Atreus con el lobo Fenrir?",
+        "opciones": [
+          "A) Es su amigo",
+          "B) Es su mentor",
+          "C) Es su hermano",
+          "D) Es su mascota"
+        ],
+        "correcta": "A) Es su amigo"
+      },
+      {
+        "pregunta": "¿Qué habilidad desbloquea Atreus al final de 'God of War' (2018)?",
+        "opciones": [
+          "A) Magia curativa",
+          "B) Control sobre las tormentas",
+          "C) Llamar a los dioses",
+          "D) Transformación en un gigante"
+        ],
+        "correcta": "B) Control sobre las tormentas"
+      },
+      {
+        "pregunta": "¿Cuál es el objetivo principal de Atreus en 'God of War' (2018)?",
+        "opciones": [
+          "A) Encontrar a su madre",
+          "B) Matar a los dioses",
+          "C) Obtener el martillo de Thor",
+          "D) Conocer su verdadero destino"
+        ],
+        "correcta": "A) Encontrar a su madre"
+      }
+    ],
+
+    "Freya": [
+      {
+        "pregunta": "¿Qué dios es Freya en la mitología nórdica?",
+        "opciones": ["A) Diosa de la sabiduría", "B) Diosa del amor y la belleza", "C) Diosa de la guerra", "D) Diosa de la muerte"],
+        "correcta": "B) Diosa del amor y la belleza"
+      },
+      {
+        "pregunta": "¿Cómo se relaciona Freya con Odín?",
+        "opciones": ["A) Son esposos", "B) Son hermanos", "C) Son enemigos", "D) No tienen relación"],
+        "correcta": "A) Son esposos"
+      },
+      {
+        "pregunta": "¿Qué fue lo que hizo Freya con los cuervos de Odín?",
+        "opciones": ["A) Los mató", "B) Los liberó", "C) Los crió como sus mascotas", "D) Los utilizó para espionaje"],
+        "correcta": "B) Los liberó"
+      },
+      {
+        "pregunta": "¿Cómo se llama el hijo de Freya?",
+        "opciones": ["A) Balder", "B) Thor", "C) Loki", "D) Atreus"],
+        "correcta": "A) Balder"
+      },
+      {
+        "pregunta": "¿Qué le sucede a Balder en 'God of War' (2018)?",
+        "opciones": ["A) Muere a manos de Kratos", "B) Se convierte en un dios poderoso", "C) Se redime y perdona a su madre", "D) Es asesinado por Freya"],
+        "correcta": "A) Muere a manos de Kratos"
+      },
+      {
+        "pregunta": "¿Qué habilidad tiene Freya en 'God of War' (2018)?",
+        "opciones": ["A) Controlar el fuego", "B) Teletransportarse", "C) Sanar a otros", "D) Invocar monstruos"],
+        "correcta": "C) Sanar a otros"
+      },
+      {
+        "pregunta": "¿Por qué Freya se vuelve enemiga de Kratos?",
+        "opciones": ["A) Porque Kratos mató a su hijo", "B) Porque traicionó a los dioses", "C) Porque destruyó su hogar", "D) Porque mató a su esposo"],
+        "correcta": "A) Porque Kratos mató a su hijo"
+      },
+      {
+        "pregunta": "¿Qué criatura acompaña a Freya en 'God of War' (2018)?",
+        "opciones": ["A) Un oso", "B) Un lobo gigante", "C) Un venado", "D) Un jabalí"],
+        "correcta": "B) Un lobo gigante"
+      },
+      {
+        "pregunta": "¿En qué lugar se encuentra Freya después de la batalla con Kratos?",
+        "opciones": ["A) El Olimpo", "B) El bosque de Vanaheim", "C) Asgard", "D) Jotunheim"],
+        "correcta": "B) El bosque de Vanaheim"
+      },
+      {
+        "pregunta": "¿Cómo se llama el reino de origen de Freya?",
+        "opciones": ["A) Midgard", "B) Asgard", "C) Vanaheim", "D) Alfheim"],
+        "correcta": "C) Vanaheim"
+      }
+    ],
+    "Thor": [
+      {
+        "pregunta": "¿Quién es el padre de Thor?",
+        "opciones": ["A) Odin", "B) Freya", "C) Loki", "D) Balder"],
+        "correcta": "A) Odin"
+      },
+      {
+        "pregunta": "¿Qué arma usa Thor en la mitología nórdica?",
+        "opciones": ["A) La lanza de Odín", "B) El hacha Leviatán", "C) El martillo Mjolnir", "D) La espada de Freya"],
+        "correcta": "C) El martillo Mjolnir"
+      },
+      {
+        "pregunta": "¿Cuál es la principal habilidad de Thor?",
+        "opciones": ["A) Controlar el fuego", "B) Controlar el trueno y el relámpago", "C) Teletransportarse", "D) Invocar tormentas de nieve"],
+        "correcta": "B) Controlar el trueno y el relámpago"
+      },
+      {
+        "pregunta": "¿Cómo se llama la esposa de Thor?",
+        "opciones": ["A) Freya", "B) Sif", "C) Frigg", "D) Loki"],
+        "correcta": "B) Sif"
+      },
+      {
+        "pregunta": "¿Cómo se llama el hijo de Thor?",
+        "opciones": ["A) Balder", "B) Atreus", "C) Magni", "D) Jörmungandr"],
+        "correcta": "C) Magni"
+      },
+      {
+        "pregunta": "¿Qué región es la patria de Thor?",
+        "opciones": ["A) Asgard", "B) Vanaheim", "C) Midgard", "D) Jotunheim"],
+        "correcta": "A) Asgard"
+      },
+      {
+        "pregunta": "¿En qué mitología aparece Thor?",
+        "opciones": ["A) Mitología romana", "B) Mitología griega", "C) Mitología nórdica", "D) Mitología egipcia"],
+        "correcta": "C) Mitología nórdica"
+      },
+      {
+        "pregunta": "¿Qué relación tiene Thor con Kratos en 'God of War' (2018)?",
+        "opciones": ["A) Son aliados", "B) Son enemigos", "C) Son hermanos", "D) Son amigos"],
+        "correcta": "B) Son enemigos"
+      },
+      {
+        "pregunta": "¿Cómo se llama el hermano de Thor?",
+        "opciones": ["A) Loki", "B) Balder", "C) Tyr", "D) Heimdall"],
+        "correcta": "A) Loki"
+      },
+      {
+        "pregunta": "¿Qué poder tiene el martillo Mjolnir de Thor?",
+        "opciones": ["A) Controlar el viento", "B) Invocar tormentas", "C) Destruir montañas", "D) Convertir el metal en oro"],
+        "correcta": "B) Invocar tormentas"
+      }
+    ],
+    "Odin": [
+      {
+        "pregunta": "¿Quién es el padre de Odin?",
+        "opciones": ["A) Buri", "B) Thor", "C) Loki", "D) Balder"],
+        "correcta": "A) Buri"
+      },
+      {
+        "pregunta": "¿Qué ojo perdió Odin?",
+        "opciones": ["A) El izquierdo", "B) El derecho", "C) El de ambos ojos", "D) No perdió ningún ojo"],
+        "correcta": "B) El derecho"
+      },
+      {
+        "pregunta": "¿Qué objeto tiene Odin en su hombro, conocido como su símbolo?",
+        "opciones": ["A) El martillo Mjolnir", "B) El cuervo", "C) El lobo", "D) El anillo Draupnir"],
+        "correcta": "D) El anillo Draupnir"
+      },
+      {
+        "pregunta": "¿En qué reino reside Odin?",
+        "opciones": ["A) Midgard", "B) Asgard", "C) Jotunheim", "D) Alfheim"],
+        "correcta": "B) Asgard"
+      },
+      {
+        "pregunta": "¿Cómo se llama el cuervo que acompaña a Odin?",
+        "opciones": ["A) Hugin", "B) Jörmungandr", "C) Freya", "D) Sif"],
+        "correcta": "A) Hugin"
+      },
+      {
+        "pregunta": "¿Qué sacrificio hizo Odin por el conocimiento?",
+        "opciones": ["A) Sacrificó su ojo", "B) Sacrificó su martillo", "C) Sacrificó a su hijo", "D) Sacrificó su alma"],
+        "correcta": "A) Sacrificó su ojo"
+      },
+      {
+        "pregunta": "¿Quién es el principal enemigo de Odin en la mitología nórdica?",
+        "opciones": ["A) Loki", "B) Jörmungandr", "C) Fenrir", "D) Surtr"],
+        "correcta": "D) Surtr"
+      },
+      {
+        "pregunta": "¿Qué poder tiene el cuervo Hugin de Odin?",
+        "opciones": ["A) Leer mentes", "B) Volar a grandes distancias", "C) Rastrear a sus enemigos", "D) Ninguno"],
+        "correcta": "C) Rastrear a sus enemigos"
+      },
+      {
+        "pregunta": "¿En qué día de la semana se celebra a Odin en la cultura nórdica?",
+        "opciones": ["A) Lunes", "B) Miércoles", "C) Viernes", "D) Domingo"],
+        "correcta": "B) Miércoles"
+      },
+      {
+        "pregunta": "¿Qué habilidad tiene Odin relacionada con las runas?",
+        "opciones": ["A) Leer el futuro", "B) Invocar tormentas", "C) Proteger a los suyos", "D) Sanar a los heridos"],
+        "correcta": "A) Leer el futuro"
+      }
+    ],
+    "Heimdall": [
+      {
+        "pregunta": "¿Qué habilidad especial tiene Heimdall?",
+        "opciones": ["A) Leer mentes", "B) Ver a través del tiempo", "C) Controlar la luz", "D) Superfuerza"],
+        "correcta": "B) Ver a través del tiempo"
+      },
+      {
+        "pregunta": "¿Cómo se llama el cuerno que Heimdall utiliza para advertir a los dioses?",
+        "opciones": ["A) Gjallarhorn", "B) Mjolnir", "C) Skadi", "D) Draupnir"],
+        "correcta": "A) Gjallarhorn"
+      },
+      {
+        "pregunta": "¿Qué relación tiene Heimdall con los dioses nórdicos?",
+        "opciones": ["A) Es hijo de Odin", "B) Es hijo de Freya", "C) Es hermano de Thor", "D) Es aliado de Loki"],
+        "correcta": "A) Es hijo de Odin"
+      },
+      {
+        "pregunta": "¿Cómo se describe a Heimdall en términos de sus habilidades?",
+        "opciones": ["A) Inmortal", "B) Un dios guerrero", "C) Un dios sabio y protector", "D) Un dios traicionero"],
+        "correcta": "C) Un dios sabio y protector"
+      },
+      {
+        "pregunta": "¿Quién es el principal enemigo de Heimdall?",
+        "opciones": ["A) Thor", "B) Loki", "C) Surtr", "D) Fenrir"],
+        "correcta": "B) Loki"
+      },
+      {
+        "pregunta": "¿En qué reino reside Heimdall?",
+        "opciones": ["A) Asgard", "B) Midgard", "C) Alfheim", "D) Vanaheim"],
+        "correcta": "A) Asgard"
+      },
+      {
+        "pregunta": "¿Qué característica física tiene Heimdall que lo hace único?",
+        "opciones": ["A) Tiene ojos de fuego", "B) Tiene múltiples brazos", "C) Su ojo izquierdo es de cristal", "D) Puede ver a través de todo"],
+        "correcta": "D) Puede ver a través de todo"
+      },
+      {
+        "pregunta": "¿Qué hace Heimdall cuando suena el Gjallarhorn?",
+        "opciones": ["A) Llama a los dioses para pelear", "B) Advierte sobre la llegada del Ragnarök", "C) Inicia una batalla", "D) Llama a las fuerzas oscuras"],
+        "correcta": "B) Advierte sobre la llegada del Ragnarök"
+      },
+      {
+        "pregunta": "¿Qué evento marca la muerte de Heimdall en la mitología nórdica?",
+        "opciones": ["A) El fin del mundo", "B) El Ragnarök", "C) La lucha con Thor", "D) La invasión de Jotunheim"],
+        "correcta": "B) El Ragnarök"
+      },
+      {
+        "pregunta": "¿Cuál es la relación de Heimdall con los humanos?",
+        "opciones": ["A) Los protege", "B) No tiene relación", "C) Los observa desde lejos", "D) Los gobierna"],
+        "correcta": "C) Los observa desde lejos"
+      }
+    ]
+  }
+}

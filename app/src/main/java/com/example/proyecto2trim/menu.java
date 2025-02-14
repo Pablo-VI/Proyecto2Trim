@@ -5,15 +5,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.proyecto2trim.databinding.ActivityMenuBinding;
 
@@ -46,18 +40,49 @@ public class menu extends AppCompatActivity {
         binding.flechaAtras.setOnClickListener(v -> finish());
 
         // Instanciar los elementos
-        Button Activity = binding.buttonCreate;
+        Button Crear = binding.buttonCreate;
+        Button Unir =  binding.buttonJoin;
 
-        // Obtener el valor del EditText y convertirlo a int de manera segura
-        String text = binding.numberCreate.getText().toString();
-        int createLobby = text.isEmpty() ? 0 : Integer.parseInt(text);
+        // Obtener el valor del EditText convertirlo a int de manera segura
+        String createCode = binding.numberCreate.getText().toString().trim();
+        int createLobby = createCode.isEmpty() ? 0 : Integer.parseInt(createCode);
+        String joinCode = binding.numberCreate.getText().toString().trim();
+        int joinLobby = joinCode.isEmpty() ? 0 : Integer.parseInt(joinCode);
 
-        // Configurar el listener para el clic del botón usando una expresión lambda
-        Activity.setOnClickListener(view -> {
-            // Crear un Intent para cambiar a la segunda Activity
-            Intent intent = new Intent(menu.this, dificultad.class);
-            startActivity(intent);
+
+        //Interacción con botón Crear partida
+        Crear.setOnClickListener(v -> {
+            if (!createCode.matches("\\d{4}"))
+            {
+                String toastMessage = getString(R.string.toastCreateLobby);
+                Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                // Llamar al método para abrir la Activity dificultad
+                openDetailActivity(createCode);
+            }
         });
+
+        if (createLobby == joinLobby)
+        {
+            openDetailActivity(createCode);
+        }
+        else
+        {
+            String toastMessage = getString(R.string.toastJoinLobby);
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Método para abrir la Activity y pasar el código
+    private void openDetailActivity(String createCode) {
+        Intent intent = new Intent(menu.this, dificultad.class); // Crear el Intent
+
+        // Pasar el valor a la nueva Activity
+        intent.putExtra("CREATE_CODE", createCode); // Clave-valor para pasar datos
+
+        startActivity(intent);  // Lanzar la nueva Activity
     }
 
     @Override

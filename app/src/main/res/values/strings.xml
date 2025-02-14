@@ -8,6 +8,7 @@
     <string name="dado">LANZA EL DADO</string>
     <string name="todo">TODO</string>
     <string name="eligetunombre">ELIGE TU NOMBRE:</string>
+    <string name="idioma">ELIGE TU IDIOMA</string>
     <string name="camponombre">Escribe tu name</string>
     <string name="eligetucolor">ELIGE TU COLOR:</string>
     <string name="eligeFila">ELIGE TU FILA</string>
@@ -23,23 +24,8 @@
     <string name="dificultad">DIFICULTAD</string>
     <string name="tirar">Tirar</string>
     <string name="jugadores">JUGADORES</string>
+    <string name="vista">VISTA TABLERO</string>
+    <string name="hintMenu">XXXX</string>
+    <string name="respuesta">RESPUESTA</string>
+    <string name="toastCreateLobby">El código de la sala debe ser de 4 números</string>
 </resources>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
