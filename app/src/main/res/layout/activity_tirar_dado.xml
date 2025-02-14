@@ -71,7 +71,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/dado"
+                android:id="@+id/dice"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_marginStart="93dp"
@@ -85,7 +85,7 @@
                 app:srcCompat="@drawable/dado1_gow" />
 
             <ImageView
-                android:id="@+id/button_lanzar"
+                android:id="@+id/button_tirar"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="128dp"
