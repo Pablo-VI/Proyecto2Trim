@@ -3,6 +3,7 @@ package com.example.proyecto2trim;
 import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,6 +21,10 @@ import java.util.Random;
 
 public class pregunta extends AppCompatActivity {
 
+    //Para contador de reloj
+    private TextView contador;
+    private int count = 30;
+
     private List<ClasePregunta> listaPreguntas;
     private TextView preguntaTextView;
     private Button boton1, boton2, boton3, boton4;
@@ -31,6 +36,23 @@ public class pregunta extends AppCompatActivity {
         ActivityPreguntaBinding binding = ActivityPreguntaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //-----------------------------------CONTADOR-------------------------------------------------------------
+        contador = findViewById(R.id.contador);  // Asegúrate de tener un TextView con el ID 'textView'
+        // Crear un Handler para ejecutar el decremento en intervalos
+        final Handler handler = new Handler();
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                if (count >= 0) {
+                    contador.setText(String.valueOf(count));
+                    count--;
+                    handler.postDelayed(this, 1000); // Esperar 1 segundo (1000 ms)
+                }
+            }
+        };
+
+        handler.post(runnable); // Iniciar el ciclo de decremento
 
         TextView TextView = binding.respuesta1;
         // Forzar orientación horizontal
