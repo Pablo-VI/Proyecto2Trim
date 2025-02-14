@@ -11,169 +11,195 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondo"
-        tools:context=".menu">
+        tools:context=".menu"
+        android:background="@drawable/fondo_gow">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_banner"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:id="@+id/margen_superior"
+            android:layout_width="732dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="349dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" >
-
-            <ImageButton
-                android:id="@+id/flecha_atras"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/flecha_atras"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="638dp"
-            android:layout_height="264dp"
-            android:layout_marginStart="46dp"
-            android:layout_marginEnd="47dp"
-            android:layout_marginBottom="77dp"
+            android:id="@+id/margen_inferior"
+            android:layout_width="732dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="349dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_banner">
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/izquierda"
+            android:layout_width="359dp"
+            android:layout_height="286dp"
+            android:layout_marginEnd="374dp"
+            app:layout_constraintBottom_toTopOf="@+id/margen_inferior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/margen_superior">
 
             <TextView
-                android:id="@+id/text_multiplayer"
-                android:layout_width="259dp"
-                android:layout_height="26dp"
-                android:layout_marginBottom="238dp"
-                android:fontFamily="@font/irish_grover"
-                android:text="@string/multijugador"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="23sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/text_create"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/text_create"
-                android:layout_width="259dp"
-                android:layout_height="26dp"
-                android:layout_marginEnd="121dp"
-                android:layout_marginBottom="238dp"
-                android:backgroundTint="#000000"
-                android:fontFamily="@font/irish_grover"
+                android:id="@+id/create_text"
+                android:layout_width="255dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="252dp"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/norsebold"
                 android:foregroundTint="#000000"
                 android:text="@string/crearjuego"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/text_multiplayer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_create"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="94dp"
+                android:layout_marginBottom="33dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_text"
+                app:srcCompat="@drawable/create_gow" />
+
+            <EditText
+                android:id="@+id/create_number"
+                android:layout_width="134dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="160dp"
+                android:layout_marginBottom="1dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/norsebold"
+                android:drawableTint="#000000"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/hintMenu"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_create" />
+
+            <ImageView
+                android:id="@+id/create_button"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="110dp"
+                android:layout_marginBottom="1dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/create_number"
+                app:layout_constraintTop_toBottomOf="@+id/image_create"
+                app:srcCompat="@drawable/play_gow" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/derecha"
+            android:layout_width="359dp"
+            android:layout_height="286dp"
+            android:layout_marginStart="374dp"
+            app:layout_constraintBottom_toTopOf="@+id/margen_inferior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/margen_superior"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/join_text"
+                android:layout_width="255dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="252dp"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/norsebold"
+                android:foregroundTint="#000000"
+                android:text="@string/multijugador"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/image_multiplayer"
-                android:layout_width="161dp"
-                android:layout_height="153dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="46dp"
-                android:layout_marginBottom="75dp"
-                android:src="@drawable/multijugador"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="33dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/image_create"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/image_create"
-                android:layout_width="161dp"
-                android:layout_height="153dp"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="216dp"
-                android:layout_marginBottom="75dp"
-                android:src="@drawable/crear"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/image_multiplayer"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/join_text"
+                app:srcCompat="@drawable/join_gow" />
 
             <EditText
-                android:id="@+id/number_create"
+                android:id="@+id/join_number"
                 android:layout_width="134dp"
-                android:layout_height="46dp"
-                android:layout_marginTop="218dp"
-                android:layout_marginEnd="354dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="65dp"
+                android:layout_marginBottom="1dp"
                 android:background="#FFFFFF"
                 android:drawableTint="#000000"
                 android:ems="10"
-                android:inputType="number"
-                android:hint="@string/hintMenu"
+                android:fontFamily="@font/norsebold"
                 android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/number_join"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/number_join"
-                android:layout_width="150dp"
-                android:layout_height="46dp"
-                android:layout_marginTop="218dp"
-                android:background="#FFFFFF"
-                android:drawableTint="#000000"
-                android:ems="10"
-                android:inputType="number"
                 android:hint="@string/hintMenu"
-                android:gravity="center"
+                android:inputType="number"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/number_create"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button_join"
-                android:layout_width="wrap_content"
-                android:layout_height="46dp"
-                android:layout_marginStart="173dp"
-                android:layout_marginTop="28dp"
-                android:background="#0F0F0F"
-                android:text="@string/unirse"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/number_join"
-                app:layout_constraintStart_toEndOf="@+id/button_create"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_multiplayer" />
 
-            <Button
-                android:id="@+id/button_create"
-                android:layout_width="wrap_content"
-                android:layout_height="46dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="413dp"
-                android:background="#0F0F0F"
-                android:text="@string/crear"
+            <ImageView
+                android:id="@+id/join_button"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="1dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/number_create"
-                app:layout_constraintTop_toBottomOf="@+id/image_create" />
+                app:layout_constraintEnd_toStartOf="@+id/join_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_multiplayer"
+                app:srcCompat="@drawable/play_gow" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

@@ -40,11 +40,11 @@ public class dificultad extends AppCompatActivity {
         }
 
         // Configurar el botón "flecha_atras" para volver a la pantalla anterior
-        binding.flechaAtras.setOnClickListener(v -> finish());
+        binding.atras.setOnClickListener(v -> finish());
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn = findViewById(R.id.check);
+        ImageButton cambiarActivityBtn = findViewById(R.id.jugar);
 
         // Configuramos el listener del ImageButton
         cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {

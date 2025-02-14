@@ -21,6 +21,12 @@ public class selection extends AppCompatActivity {
         ActivitySelectionBinding binding = ActivitySelectionBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+<<<<<<< HEAD
+        // Obtener el nombre del jugador
+        playerName = binding.escribetunombre.getText().toString();
+
+=======
+>>>>>>> 20af1a3e4d90d477ba1925a1ffcad935b929b789
         // Forzar orientación horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 

@@ -5,23 +5,21 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.proyecto2trim.databinding.ActivityInicioBinding;
+import com.example.proyecto2trim.databinding.ActivityIdiomaBinding;
 
-public class inicio extends AppCompatActivity {
+
+public class idioma extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //EdgeToEdge.enable(this);
-        //setContentView(R.layout.activity_inicio);
-        ActivityInicioBinding binding = ActivityInicioBinding.inflate(getLayoutInflater());
+        //setContentView(R.layout.activity_main);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        ActivityIdiomaBinding binding = ActivityIdiomaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Forzar orientación horizontal
@@ -40,14 +38,14 @@ public class inicio extends AppCompatActivity {
         }
 
         // Inicializamos el ImageButton
-        ImageButton cambiarActivityBtn = findViewById(R.id.play);
+        ImageView cambiarActivityBtn = findViewById(R.id.espana);
 
         // Configuramos el listener del ImageButton
         cambiarActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
-                Intent intent = new Intent(inicio.this, resultado.class);
+                Intent intent = new Intent(idioma.this, menu.class);
                 startActivity(intent);
             }
         });
