@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Hilo que gestiona la carrera para un cliente/jinete concreto.
+ * Hilo que gestiona la partida para un cliente/jugador concreto.
  * Se controla el turno: solo el cliente cuyo id coincide con el turno actual podrá lanzar el dado.
  */
 public class GestionClientes extends Thread {
@@ -76,7 +76,7 @@ public class GestionClientes extends Thread {
                 Thread.sleep(500);
             }
 
-            // 3) Una vez finalizada la carrera, se envían las posiciones finales
+            // 3) Una vez finalizada la partida, se envían las posiciones finales
             int[] posiciones = servidor.getPosicionesFinales(idJugador);
             for (int i = 0; i < 4; i++) {
                 out.writeInt(posiciones[i]);

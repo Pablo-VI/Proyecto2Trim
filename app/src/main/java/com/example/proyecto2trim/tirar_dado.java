@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,14 +20,14 @@ import java.util.Random;
 
 public class tirar_dado extends AppCompatActivity {
     private ImageView imageView; // Vista para mostrar la imagen del dado
-    private Button generarNumeroBtn; // Botón para lanzar el dado
+    private ImageView generarNumeroBtn; // Botón para lanzar el dado
     private Client cliente; // Cliente para conectarse al servidor
 
     // Variables para gestionar la tirada del dado
     private int resultadoDado;
     private boolean dadoLanzado;
 
-    private JLabel etiquetaJugador;    // Muestra el nombre del jugador
+    private TextView etiquetaJugador;    // Muestra el nombre del jugador
 
 
 
@@ -100,64 +101,83 @@ public class tirar_dado extends AppCompatActivity {
         imageView = binding.dice; // Obtener la referencia al ImageView del dado
         generarNumeroBtn = binding.buttonTirar; // Obtener la referencia al botón de lanzar
 
-        public int esperarTirada()
-        {
-            // Activar la tirada en la interfaz
-            activarTirada();
-            synchronized(this)
-            {
-                while (!dadoLanzado)
-                {
-                    try
-                    {
-                        wait();
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
-                }
-                // Reiniciar la bandera para la siguiente tirada
-                dadoLanzado = false;
-                // Restaurar el color original del jugador
-                etiquetaJugador.setForeground(Color.BLACK);
-                return resultadoDado;
-            }
-        }
-
-        /**
-         * Activa el botón de "Lanzar Dado" para que el jugador pueda realizar su tirada.
-         * Se llama cuando el servidor notifica que es el turno del jugador.
-         */
-        public void activarTirada() {
-            runOnUiThread(() -> {
-                generarNumeroBtn.setEnabled(true);
-                // Opcional: cambiar el color del texto para indicar el turno
-                etiquetaJugador.setTextColor(Color.BLUE);
-            });
-        }
-  
-        inicializarTablero();
-
-        imageView = findViewById(R.id.dice);
-        generarNumeroBtn = findViewById(R.id.button_tirar);
-
-        // Se crea el cliente usando el constructor que asigna valores por defecto
-        cliente = new Client(5555); // Asegúrate de que esto es lo que necesitas
-        new Thread(cliente).start();
-
         generarNumeroBtn.setOnClickListener(v -> tirarDado());
 
-        // Inicializamos el Button para cambiar de Activity
-        Button cambiarActivity = findViewById(R.id.button_tirar);
-
+        /*
+        Adaptarlo para que cambie despues de tirar dado
         // Configuramos el listener del Button
-        cambiarActivity.setOnClickListener(new View.OnClickListener() {
+        generarNumeroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Cambiar a la segunda Activity
                 Intent intent = new Intent(tirar_dado.this, pregunta.class);
                 startActivity(intent);
             }
+        });*/
+    }
+
+    public int esperarTirada()
+    {
+        // Activar la tirada en la interfaz
+        activarTirada();
+        synchronized(this)
+        {
+            while (!dadoLanzado)
+            {
+                try
+                {
+                    // Esperar hasta que el dado sea lanzado
+                    wait();
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            // Reiniciar la bandera para la siguiente tirada
+            dadoLanzado = false;
+            return resultadoDado;
+        }
+    }
+
+    /**
+     * Activa el botón de "Lanzar Dado" para que el jugador pueda realizar su tirada.
+     * Se llama cuando el servidor notifica que es el turno del jugador.
+     */
+    public void activarTirada() {
+        runOnUiThread(() -> {
+            generarNumeroBtn.setEnabled(true);
         });
+    }
+
+    // Método para notificar que el dado ha sido lanzado
+    public void onDadoLanzado(int numeroAleatorio) {
+        synchronized(this) {
+            resultadoDado = numeroAleatorio;
+            dadoLanzado = true;
+            notify(); // Despertar el hilo en espera
+        }
+    }
+
+    ///Método para tirar de dado
+    public void tirarDado() {
+        Random rand = new Random();
+
+        // Deshabilitar el botón para evitar múltiples clics
+        generarNumeroBtn.setEnabled(false);
+
+        int numeroAleatorio = rand.nextInt(6) + 1;
+
+        // Notificar que el dado ha sido lanzado
+        onDadoLanzado(numeroAleatorio);
+        // Cambiar imagen del dado
+        cambiarImagenDado(numeroAleatorio);
+    }
+
+    private void cambiarImagenDado(int numeroAleatorio) {
+        int[] recursos = {
+                R.drawable.dado_1, R.drawable.dado_2, R.drawable.dado_3,
+                R.drawable.dado_4, R.drawable.dado_5, R.drawable.dado_6
+        };
+        imageView.setImageResource(recursos[numeroAleatorio - 1]);
     }
 
     private void ocultarBarrasDeSistema() {
@@ -168,68 +188,11 @@ public class tirar_dado extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    public void tirarDado() {
-        Random rand = new Random();
-        int numeroAleatorio = rand.nextInt(6) + 1;
-
-        // Mover al jugador según el resultado del dado
-        int resultado = main[cliente.getPosition()].tirarDado();  // Aquí usamos el método tirarDado() de la clase Table
-
-        // Enviar el nuevo estado del jugador al servidor
-        new Thread(() -> {
-            try (Socket sc = new Socket("127.0.0.1", 12345);
-                 ObjectOutputStream oos = new ObjectOutputStream(sc.getOutputStream())) {
-                // Actualizamos la posición del jugador y enviamos al servidor
-                cliente.setPosition(cliente.getPosition() + resultado);
-                oos.writeObject(cliente);
-                oos.flush();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }).start();
-
-
-        // Cambiar la imagen del dado según el resultado
-        cambiarImagenDado(numeroAleatorio);
-
-        // Actualizar la interfaz con la nueva posición del jugador
-        actualizarInterfaz(cliente);
-    }
-
-
-    private void cambiarImagenDado(int numero) {
-        int[] recursos = {
-                R.drawable.dado_1, R.drawable.dado_2, R.drawable.dado_3,
-                R.drawable.dado_4, R.drawable.dado_5, R.drawable.dado_6
-        };
-        imageView.setImageResource(recursos[numero - 1]);
-    }
-
-    private void actualizarInterfaz(Client cliente) {
-        // Actualizar la interfaz según el estado del cliente/jugador
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
         ocultarBarrasDeSistema();
     }
-
-    private void inicializarTablero() {
-        // Inicializar el tablero si es necesario
-    }
-
-    private void actualizarInterfaz(Client cliente) {
-        // Cambiar la imagen del jugador en el tablero
-        // Suponiendo que tienes un ImageView que representa la ficha del jugador
-        ImageView fichaJugador = findViewById(R.id.jugadorDado);
-
-        // Cambiar la posición de la ficha en el tablero según la nueva posición del jugador
-        // Ejemplo simple: cambiar la imagen según el índice de la casilla
-        int nuevaPosicion = cliente.getPosition();
-
-        // Por ejemplo, cambia la imagen según la posición, o mueve el ImageView
-        fichaJugador.setImageResource(R.drawable.ficha_moving); // Imagen de la ficha
-    }
-
 }
+
+

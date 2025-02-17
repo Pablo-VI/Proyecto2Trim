@@ -17,7 +17,8 @@ import com.example.proyecto2trim.databinding.ActivityGameBinding;
 public class game extends AppCompatActivity {
 
     private String[] nombresJugadores; // Array con los nombres de los jugadores
-    private JLabel[] etiquetasNombres; // Etiquetas con los nombres de los jugadores
+    private int[] posicionesFinales;  // Posiciones finales de los jugadores
+    private TextView[] etiquetasNombres; // Etiquetas con los nombres de los jugadores
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,13 +59,13 @@ public class game extends AppCompatActivity {
     }
 
     /**
-     * Establece los nombres de los jinetes en las etiquetas.
+     * Establece los nombres de los jugadores en las etiquetas.
      * @param nombres Cadena de nombres separados por comas.
      */
     public void setNombresJugadores(String nombres) {
-        this.nombresJugadores = nombres.split(",");
+        this.nombresJugadores = nombres.split("\\s*,\\s*");
         for (int i = 0; i < nombresJugadores.length && i < etiquetasNombres.length; i++) {
-            etiquetasNombres[i].setText(nombresJugadores[i]);
+            etiquetasNombres[i].setText(nombresJugadores[i].trim());
         }
     }
 
@@ -76,8 +77,7 @@ public class game extends AppCompatActivity {
     {
         for (int i = 0; i < 6; i++)
         {
-            int val = Math.min(avances[i], 35);
-            barras[i].setValue(val);
+            int val = Math.min(avances[i], 35);;
         }
     }
 
@@ -87,9 +87,10 @@ public class game extends AppCompatActivity {
      */
     public void setPosicionesFinales(int[] posiciones) {
         this.posicionesFinales = posiciones;
+    }
 
 
-        @Override
+    @Override
     protected void onResume() {
         super.onResume();
         // Asegurarse de que la pantalla completa se mantenga al volver a la actividad

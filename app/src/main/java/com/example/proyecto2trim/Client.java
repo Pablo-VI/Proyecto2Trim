@@ -116,17 +116,20 @@ public class Client implements Runnable, Parcelable, Serializable {
             // 2) Recibir confirmación de aceptación
             String respuesta = in.readUTF();
             if ("aceptado".equals(respuesta)) {
-                System.out.println("[" + name + "] El servidor me ha aceptado en la carrera.");
+                System.out.println("[" + name + "] El servidor le ha aceptado en la partida.");
             }
 
             // 3) Recibir la lista de jugadores
             String listaJugadores = in.readUTF();
             System.out.println("[" + name + "] Lista de jugadores: " + listaJugadores);
 
-            // Se muestra la ventana gráfica de la carrera
-            ventana = new ClienteVentanaCarrera(name);
-            ventana.setNombresJinetes(listaJugadores);
-            ventana.setVisible(true);
+            // Se muestra la ventanaGame gráfica de la partida (**Revisar funcionamiento**)
+            game ventanaGame = new game();
+            ventanaGame.setNombresJugadores(listaJugadores);
+            ventanaGame.setVisible(true);
+
+            //Se instancia la ventanaDado para llamar metodos de la clase tirar_dado.java
+            tirar_dado ventanaDado = new tirar_dado();
 
             // 4) Bucle principal de comunicación con el servidor
             while (!fin)
@@ -138,9 +141,9 @@ public class Client implements Runnable, Parcelable, Serializable {
                 {
                     // Código -2: El servidor indica "¡Es tu turno, lanza el dado!"
                     System.out.println("[" + name + "] Es mi turno. Lanza el dado.");
-                    // Se espera la tirada en la ventana (método bloqueante)
+                    // Se espera la tirada en la ventanaGame (método bloqueante)
                     //HAcer codigo para llamar a tirar_dado.java y pasar los datos de la tirada
-                    int dado = game.esperarTirada();
+                    int dado = ventanaDado.esperarTirada();
                     // Se envía el valor del dado al servidor
                     out.writeInt(dado);
                     out.flush();
@@ -157,7 +160,7 @@ public class Client implements Runnable, Parcelable, Serializable {
                     avances[3] = in.readInt();
                     int control = in.readInt(); // control = 0
                     // Se actualiza la interfaz gráfica con los avances
-                    ventana.avance(avances);
+                    ventanaGame.avance(avances);
                 }
                 else if (codigo == -1)
                 {
@@ -168,7 +171,7 @@ public class Client implements Runnable, Parcelable, Serializable {
                     posiciones[1] = in.readInt();
                     posiciones[2] = in.readInt();
                     posiciones[3] = in.readInt();
-                    ventana.setPosicionesFinales(posiciones);
+                    ventanaGame.setPosicionesFinales(posiciones);
                     fin = true;
                 }
             }
